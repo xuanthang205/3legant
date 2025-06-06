@@ -1,4 +1,7 @@
-/* out:../css/main.css */
-@import './common/fonts';
-@import './common/common';
-@import './layout/header';
+@use './common/variables';
+@use './common/fonts';
+@use './common/common';
+@use './common/mixins';
+@use './components/auth';
+@use './layout/header';
+@use './layout/footer';

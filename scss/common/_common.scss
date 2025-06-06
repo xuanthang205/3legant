@@ -1,4 +1,5 @@
-/* Reset */
+@use './common/variables' as *;
+// Reset
 html,
 body,
 div,
@@ -56,9 +57,9 @@ input {
   line-height: 1px !important;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* // Reset */
+// // Reset
 
-/* Animation */
+// Animation
 @keyframes moveInLeft {
   from {
     transform: translateX(-100%);
@@ -67,29 +68,37 @@ input {
     transform: translateX(0);
   }
 }
-/* // Animation */
+// //Animation
+.inner {
+  --width: calc(100% - 64px);
+  max-width: min(1120px, var(--width));
+  margin: 0 auto;
+  padding: 80px 0;
+  box-sizing: border-box;
+}
 
-/* Common */
 .btn {
   --height: 46px;
   display: inline-block;
   min-width: min(183px, 100%);
   height: var(--height);
   border-radius: 8px;
-  background-color: #141718;
+  background-color: $text-primary-color;
+  font-size: 16px;
   font-weight: 500;
   color: #fff;
   letter-spacing: -0.4px;
   text-align: center;
   line-height: var(--height);
   transition: opacity 0.3s ease;
+  cursor: pointer;
   box-sizing: border-box;
 }
 
 .btn:hover {
   opacity: 0.8;
 }
-
+// Icon
 .icon {
   display: inline-block;
   overflow: hidden;
@@ -97,62 +106,79 @@ input {
   height: 24px;
   background-image: url(../images/sp_icons.png);
   background-repeat: no-repeat;
-  background-size: 226px 51px;
+  background-size: 251px 51px;
   vertical-align: top;
   cursor: pointer;
   box-sizing: border-box;
-}
 
-.icon_search {
-  background-position: -1px -1px;
-}
+  &_search {
+    background-position: -1px -1px;
+  }
 
-.icon_user {
-  background-position: -26px -1px;
-}
+  &_user {
+    background-position: -26px -1px;
+  }
 
-.icon_cart {
-  background-position: -51px -1px;
-}
+  &_cart {
+    background-position: -51px -1px;
+  }
 
-.icon_menu {
-  background-position: -76px -1px;
-}
+  &_menu {
+    background-position: -76px -1px;
+  }
 
-.icon_close {
-  background-position: -101px -1px;
-}
+  &_close {
+    background-position: -101px -1px;
+  }
 
-.icon_like {
-  background-position: -126px -1px;
-}
+  &_like {
+    background-position: -126px -1px;
+  }
 
-.icon_instagram {
-  background-position: -151px -1px;
-}
+  &_instagram {
+    background-position: -151px -1px;
+  }
 
-.icon_facebook {
-  background-position: -176px -1px;
-}
+  &_facebook {
+    background-position: -176px -1px;
+  }
 
-.icon_youtube {
-  background-position: -201px -1px;
-}
+  &_youtube {
+    background-position: -201px -1px;
+  }
 
-.logo_box {
-  display: flex;
-  align-items: center;
-}
+  &_instagram2 {
+    background-position: -1px -26px;
+  }
 
-.logo,
-.logo_link {
+  &_facebook2 {
+    background-position: -26px -26px;
+  }
+
+  &_youtube2 {
+    background-position: -51px -26px;
+  }
+
+  &_eye {
+    background-position: -226px -26px;
+  }
+}
+// //Icon
+// Logo
+.logo {
   display: inline-flex;
-}
 
-.logo_img {
-  margin-top: 3px;
-}
+  &_box {
+    display: flex;
+    align-items: center;
+  }
 
+  &_link {
+    @extend .logo;
+  }
+}
+// //Logo
+// Dimmed
 .dimmed {
   visibility: hidden;
   position: fixed;
@@ -161,22 +187,25 @@ input {
   background-color: rgba(0, 0, 0, 0.32);
   opacity: 0;
   transition: all 0.3s ease;
-}
 
-.dimmed.is_show {
-  visibility: visible;
-  opacity: 1;
+  &.is_show {
+    visibility: visible;
+    opacity: 1;
+  }
 }
+// //Dimmed
+// Social
+.social {
+  &_list {
+    display: flex;
+    gap: 12px;
+    margin: 0px 0 -6px -6px;
+  }
 
-.social_list {
-  display: flex;
-  gap: 12px;
-  margin: 0px 0 -6px -6px;
+  &_link {
+    display: inline-block;
+    padding: 6px;
+    box-sizing: border-box;
+  }
 }
-
-.social_link {
-  display: inline-block;
-  padding: 6px;
-  box-sizing: border-box;
-}
-/* // Common */
+// //Social
