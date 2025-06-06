@@ -1,0 +1,182 @@
+/* Reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+figure,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  font-family: 'Inter', sans-serif;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input {
+  border: 0;
+  line-height: 0;
+  background: transparent;
+}
+
+.blind {
+  overflow: hidden;
+  position: absolute;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  line-height: 1px !important;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+/* // Reset */
+
+/* Animation */
+@keyframes moveInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+/* // Animation */
+
+/* Common */
+.btn {
+  --height: 46px;
+  display: inline-block;
+  min-width: min(183px, 100%);
+  height: var(--height);
+  border-radius: 8px;
+  background-color: #141718;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.4px;
+  text-align: center;
+  line-height: var(--height);
+  transition: opacity 0.3s ease;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.icon {
+  display: inline-block;
+  overflow: hidden;
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/sp_icons.png);
+  background-repeat: no-repeat;
+  background-size: 226px 51px;
+  vertical-align: top;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.icon_search {
+  background-position: -1px -1px;
+}
+
+.icon_user {
+  background-position: -26px -1px;
+}
+
+.icon_cart {
+  background-position: -51px -1px;
+}
+
+.icon_menu {
+  background-position: -76px -1px;
+}
+
+.icon_close {
+  background-position: -101px -1px;
+}
+
+.icon_like {
+  background-position: -126px -1px;
+}
+
+.icon_instagram {
+  background-position: -151px -1px;
+}
+
+.icon_facebook {
+  background-position: -176px -1px;
+}
+
+.icon_youtube {
+  background-position: -201px -1px;
+}
+
+.logo_box {
+  display: flex;
+  align-items: center;
+}
+
+.logo,
+.logo_link {
+  display: inline-flex;
+}
+
+.logo_img {
+  margin-top: 3px;
+}
+
+.dimmed {
+  visibility: hidden;
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.32);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.dimmed.is_show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.social_list {
+  display: flex;
+  gap: 12px;
+  margin: 0px 0 -6px -6px;
+}
+
+.social_link {
+  display: inline-block;
+  padding: 6px;
+  box-sizing: border-box;
+}
+/* // Common */
