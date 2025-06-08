@@ -138,14 +138,15 @@
 
     &::after {
       position: absolute;
-      top: 8px;
-      left: 5px;
+      top: 50%;
+      left: 0px;
       width: 14px;
       height: 8px;
       border-width: 0 0 3px 3px;
       border-style: solid;
       border-color: #fff;
       rotate: -45deg;
+      transform: translate(7px, 0);
       box-sizing: border-box;
       content: '';
     }
@@ -173,14 +174,6 @@
   }
 }
 
-@media screen and (max-width: 992px) {
-    .auth_form{
-        .auth_inline::after{
-            top: 20px;
-        }
-    }
-}
-
 @media screen and (max-width: 768px) {
   .auth_wrap {
     flex-direction: column;
@@ -196,7 +189,7 @@
         top: 0;
         left: 0;
         right: 0;
-        max-width: none;
+        max-width: 100%;
         padding: 40px 32px;
       }
     }
@@ -207,10 +200,6 @@
       font-weight: 400;
       font-size: 12px;
       line-height: 20px;
-
-      &::after{
-        top: 5px;
-      }
 
       &_link {
         font-weight: 600;
