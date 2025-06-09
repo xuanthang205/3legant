@@ -1,0 +1,16 @@
+.slider {
+  &_box {
+    display: flex;
+  }
+
+  & .heading {
+    max-width: 643px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 72px;
+    font-weight: 500;
+    color: #121212;
+    letter-spacing: -2px;
+    line-height: 76px;
+  }
+}
+ 

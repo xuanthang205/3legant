@@ -7,6 +7,7 @@
     <title>3legant. : Sign Up</title>
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
   </head>
+
   <body>
     <div class="wrap">
       <section class="auth_wrap">
@@ -29,29 +30,31 @@
                 <input type="text" id="your_name" name="your_name" placeholder="Your name" class="input" required />
               </div>
               <div class="auth_input">
-                <input type="text" id="user_name" name="user_name" placeholder="User name" class="input" required />
+                <input type="text" id="user_name" name="user_name" placeholder="Username" class="input" required />
               </div>
               <div class="auth_input">
                 <input type="email" id="email_address" name="email_address" placeholder="Email address" class="input" required />
               </div>
               <div class="auth_input">
                 <input type="password" id="password" name="password" placeholder="Password" class="input" minlength="6" required />
-                <button type="button" class="show_password" aria-label="Show password">
+                <button type="button" class="btn_show_password" aria-label="Show password">
                   <span class="icon icon_eye"></span>
                 </button>
               </div>
               <input type="checkbox" id="agree_terms" name="agree_terms" class="auth_checkbox" hidden required />
-                <label for="agree_terms" class="auth_inline">I agree with
-                  <a href="#none" class="auth_inline_link">Privacy Policy</a>
-                  and
-                  <a href="#none" class="auth_inline_link">Terms of Use</a>
-                </label>
+              <label for="agree_terms" class="auth_inline"
+                >I agree with
+                <a href="#none" class="auth_inline_link">Privacy Policy</a>
+                and
+                <a href="#none" class="auth_inline_link">Terms of Use</a>
+              </label>
               <button type="submit" class="btn btn_submit">Sign Up</button>
             </form>
           </div>
         </div>
       </section>
     </div>
+    <script src="../js/vendors/jquery/jquery.min.js"></script>
     <script src="../js/auth.js"></script>
   </body>
 </html>

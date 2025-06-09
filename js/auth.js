@@ -1,8 +1,19 @@
-const toggleBtn = document.querySelector(".show_password");
-  const passwordInput = document.querySelector("#password");
-  const icon = toggleBtn.querySelector(".icon_eye");
+const $toggleBtn = $('.btn_show_password');
+const $passwordInput = $('#password');
 
-  toggleBtn.addEventListener("click", function () {
-    const isHidden = passwordInput.type === "password";
-    passwordInput.type = isHidden ? "text" : "password";
-  });
+const showPassword = () => {
+  $passwordInput.attr('type', 'text').trigger('focus');
+};
+
+const hidePassword = () => {
+  $passwordInput.attr('type', 'password').trigger('focus');
+};
+
+$toggleBtn.on('mousedown touchstart', function (e) {
+  e.preventDefault(); // Prevent losing focus on mobile
+  showPassword();
+});
+
+$toggleBtn.on('mouseup mouseleave touchend', function () {
+  hidePassword();
+});

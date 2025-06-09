@@ -1,0 +1,86 @@
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 40px;
+  padding-right: 21px;
+  background-color: #f3f5f7;
+
+  .text {
+    margin-left: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #343839;
+    line-height: 22px;
+  }
+
+  .more_link {
+    gap: 2px;
+    margin-left: 12px;
+    font-size: 14px;
+    color: #377dff;
+    line-height: 24px;
+    letter-spacing: 0px;
+
+    &::after {
+      background-color: #377dff;
+    }
+  }
+
+  .icon_arrow_right {
+    margin-right: -4px;
+  }
+
+  .btn_close {
+    position: absolute;
+    top: 0;
+    right: 6px;
+    padding: 10px;
+  }
+
+  .icon_close {
+    width: 20px;
+    height: 20px;
+    background-size: 230px 43px;
+    background-position: -84px -1px;
+  }
+
+  .icon_arrow_right {
+    background-position: -251px -26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .notification {
+    height: 36px;
+    padding-right: 39px;
+    .text {
+      margin-left: 8px;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .icon_ticket_percent {
+      width: 16px;
+      height: 16px;
+      background-size: 184px 34px;
+      background-position: -167px -0.7px;
+    }
+
+    .more_link {
+      display: none;
+    }
+
+    .btn_close {
+      right: 12.2%;
+    }
+
+    .icon_close {
+      width: 16px;
+      height: 16px;
+      background-size: 184px 34px;
+      background-position: -68px -0.7px;
+    }
+  }
+}

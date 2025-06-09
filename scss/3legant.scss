@@ -3,5 +3,7 @@
 @use './common/common';
 @use './common/mixins';
 @use './components/auth';
+@use './components/notification';
 @use './layout/header';
 @use './layout/footer';
+@use './pages/home';
