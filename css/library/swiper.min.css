@@ -19,11 +19,11 @@
 :root {
   --swiper-theme-color: #007aff;
 }
-:host {     
+:host {
   position: relative;
   display: block;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
   z-index: 1;
 }
 .swiper {
@@ -208,6 +208,7 @@
 }
 .swiper-virtual .swiper-slide {
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   transform: translateZ(0);
 }
 .swiper-virtual.swiper-css-mode .swiper-wrapper::after {

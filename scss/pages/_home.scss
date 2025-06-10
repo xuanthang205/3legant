@@ -1,9 +1,65 @@
+@use '../common/variables' as *;
 .slider {
-  &_box {
-    display: flex;
+  .inner {
+    padding-top: 0;
+    padding-bottom: 40px;
   }
 
-  & .heading {
+  &_item {
+    position: relative;
+    padding-top: 47.858%;
+  }
+
+  .swiper-pagination {
+    --swiper-pagination-bottom: 28px;
+    --swiper-pagination-bullet-horizontal-gap: 8px;
+
+    &-bullet {
+      --swiper-pagination-bullet-inactive-color: #fefefe;
+      --swiper-pagination-bullet-inactive-opacity: 1;
+
+      &-active {
+        --swiper-pagination-bullet-width: 30px;
+        --swiper-pagination-bullet-border-radius: 100px;
+        --swiper-theme-color: #fefefe;
+      }
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    --swiper-navigation-sides-offset: 32px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-tap-highlight-color: transparent;
+
+    &::after {
+      overflow: hidden;
+      width: 32px;
+      height: 32px;
+      background-image: url(../../images/sp_icons_medium.png);
+      background-repeat: no-repeat;
+      background-size: 246px 50px;
+      background-position: -206px -9px;
+      vertical-align: top;
+      box-sizing: border-box;
+      content: '';
+    }
+  }
+
+  .swiper-button-prev::after {
+    rotate: 180deg;
+  }
+
+  &_box {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+  }
+
+  .heading {
     max-width: 643px;
     font-family: 'Poppins', sans-serif;
     font-size: 72px;
@@ -11,6 +67,174 @@
     color: #121212;
     letter-spacing: -2px;
     line-height: 76px;
+
+    &_accent {
+      color: $text-secondary-color;
+    }
+  }
+
+  .desc {
+    margin-top: 2px;
+    padding: 0 29px 0 24px;
+    color: $text-secondary-color;
+    line-height: 26px;
+
+    &_accent {
+      font-weight: 600;
+      color: #121212;
+    }
   }
 }
- 
+
+.banner {
+  .inner {
+    padding: 0;
+  }
+
+  &_wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  &_item {
+    position: relative;
+    &:first-child {
+      grid-row: span 2;
+
+      .banner_link {
+        padding-top: 121.17%;
+      }
+
+      .banner_content {
+        top: 7.23%;
+        bottom: auto;
+        left: 8.76%;
+      }
+    }
+  }
+
+  &_link {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-top: 58.395%;
+
+    .img {
+      transition: scale 0.2s ease;
+    }
+
+    &:hover .img {
+      scale: 1.1;
+    }
+  }
+
+  &_content {
+    position: absolute;
+    top: auto;
+    bottom: 12.5%;
+    left: 5.84%;
+  }
+
+  &_title {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    color: $text-primary-color;
+    letter-spacing: -0.6px;
+    line-height: 38px;
+  }
+}
+
+@media (max-width: 992px) {
+  .slider {
+    &_box {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .heading {
+      max-width: 100%;
+      font-size: 40px;
+      line-height: 44px;
+      letter-spacing: -0.4px;
+    }
+
+    .desc {
+      margin-top: 19px;
+      padding: 0;
+    }
+  }
+
+  .banner {
+    &_title {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    &_item {
+      padding-top: 97.75%;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+
+    .desc {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    .swiper-pagination {
+      --swiper-pagination-bottom: 12px;
+    }
+  }
+
+  .banner {
+    &_wrap {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    &_item {
+      &:first-child {
+        .banner_link {
+          padding-top: 121.222%;
+        }
+
+        .banner_content {
+          top: 8.49%;
+          left: 10.29%;
+        }
+      }
+    }
+    &_link {
+      padding-top: 57.88%;
+    }
+
+    &_title {
+      margin-bottom: 8px;
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    &_content {
+      bottom: 17.78%;
+      left: 10.29%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .banner {
+    &_title {
+      font-size: 24px;
+    }
+  }
+}
