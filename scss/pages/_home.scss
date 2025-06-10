@@ -11,17 +11,23 @@
   }
 
   .swiper-pagination {
-    --swiper-pagination-bottom: 28px;
-    --swiper-pagination-bullet-horizontal-gap: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    bottom: 32px;
 
-    &-bullet {
-      --swiper-pagination-bullet-inactive-color: #fefefe;
-      --swiper-pagination-bullet-inactive-opacity: 1;
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      background-color: #fefefe;
+      border-radius: 50%;
+      opacity: 1;
+      transition: all 0.3s ease;
 
-      &-active {
-        --swiper-pagination-bullet-width: 30px;
-        --swiper-pagination-bullet-border-radius: 100px;
-        --swiper-theme-color: #fefefe;
+      &.swiper-pagination-bullet-active {
+        width: 30px;
+        border-radius: 100px;
+        background-color: #fefefe;
       }
     }
   }
@@ -39,7 +45,7 @@
       overflow: hidden;
       width: 32px;
       height: 32px;
-      background-image: url(../../images/sp_icons_medium.png);
+      background-image: url(../images/sp_icons_medium.png);
       background-repeat: no-repeat;
       background-size: 246px 50px;
       background-position: -206px -9px;

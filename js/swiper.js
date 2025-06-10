@@ -25,8 +25,8 @@ const swiper = new Swiper('.slider_wrap', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 });
