@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
     <title>3legant. : Homepage 01</title>
-    <link rel="stylesheet" type="text/css" href="../css/library/swiper.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/library/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
   </head>
   <body>
     <div class="home">
@@ -19,17 +19,20 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <figure class="slider_item">
-                    <img src="../images/img_slide1.png" alt="Innova" class="img">
+                    <picture>
+                      <source media="(max-width: 768px)" srcset="../images/img_slide1_mobile.png" />
+                      <img src="../images/img_slide1.png" alt="Innova" class="img" />
+                    </picture>
                   </figure>
                 </div>
                 <div class="swiper-slide">
                   <figure class="slider_item">
-                    <img src="../images/img_slide2.jpg" alt="Erado" class="img">
+                    <img src="../images/img_slide2.jpg" alt="Erado" class="img" />
                   </figure>
                 </div>
                 <div class="swiper-slide">
                   <figure class="slider_item">
-                    <img src="../images/img_slide3.webp" alt="Giovanni" class="img">
+                    <img src="../images/img_slide3.webp" alt="Giovanni" class="img" />
                   </figure>
                 </div>
               </div>
@@ -38,23 +41,25 @@
               <div class="swiper-button-next"></div>
             </div>
             <div class="slider_box">
-              <h2 class="heading">
-                Simply Unique<span class="heading_accent">/</span> Simply Better<span class="heading_accent">.</span>
-              </h2>
+              <h2 class="heading">Simply Unique<span class="heading_accent">/</span> Simply Better<span class="heading_accent">.</span></h2>
               <p class="desc">
                 <strong class="desc_accent">3legant</strong>
-                is a gift & decorations store based in HCMC, Vietnam. Est since 2019.</p>
+                is a gift & decorations store based in HCMC, Vietnam. Est since 2019.
+              </p>
             </div>
           </div>
         </section>
-        <!-- // Slider -->
+        <!--/ Slider -->
         <!-- Banner -->
         <section class="banner">
           <div class="inner">
             <div class="banner_wrap">
               <div class="banner_item">
                 <a href="#none" class="banner_link">
-                  <img src="../images/img_banner1.png" alt="Living Room" class="img">
+                  <picture>
+                    <source media="(max-width: 768px)" srcset="../images/img_banner1_mobile.png" />
+                    <img src="../images/img_banner1.png" alt="Living Room" class="img" />
+                  </picture>
                 </a>
                 <div class="banner_content">
                   <h3><a href="#none" class="banner_title">Living Room</a></h3>
@@ -66,7 +71,10 @@
               </div>
               <div class="banner_item">
                 <a href="#none" class="banner_link">
-                  <img src="../images/img_banner2.png" alt="Bedroom" class="img">
+                  <picture>
+                    <source media="(max-width: 768px)" srcset="../images/img_banner2_mobile.png" />
+                    <img src="../images/img_banner2.png" alt="Living Room" class="img" />
+                  </picture>
                 </a>
                 <div class="banner_content">
                   <h3><a href="#none" class="banner_title">Bedroom</a></h3>
@@ -78,7 +86,10 @@
               </div>
               <div class="banner_item">
                 <a href="#none" class="banner_link">
-                  <img src="../images/img_banner3.png" alt="Kitchen" class="img">
+                  <picture>
+                    <source media="(max-width: 768px)" srcset="../images/img_banner3_mobile.png" />
+                    <img src="../images/img_banner3.png" alt="Living Room" class="img" />
+                  </picture>
                 </a>
                 <div class="banner_content">
                   <h3><a href="#none" class="banner_title">Kitchen</a></h3>
@@ -92,6 +103,131 @@
           </div>
         </section>
         <!--/ Banner -->
+        <!-- Product -->
+        <section class="product">
+          <div class="inner">
+            <div class="section_top">
+              <h2 class="section_heading">New Arrivals</h2>
+              <a href="#none" class="more_link">
+                More Products
+                <span class="icon icon_arrow_right"></span>
+              </a>
+            </div>
+            @@include("product_card.html")
+          </div>
+        </section>
+        <!--/ Product -->
+        <!-- Values -->
+        <div class="values">
+          <div class="inner">
+            <div class="values_wrap">
+              <div class="values_card">
+                <span class="icon icon_car">
+                  <span class="blind">Free Shipping</span>
+                </span>
+                <h4 class="values_title">Free Shipping</h4>
+                <p class="values_desc">Order above $200</p>
+              </div>
+              <div class="values_card">
+                <span class="icon icon_refund">
+                  <span class="blind">Money-back</span>
+                </span>
+                <h4 class="values_title">Money-back</h4>
+                <p class="values_desc">30 days guarantee</p>
+              </div>
+              <div class="values_card">
+                <span class="icon icon_lock">
+                  <span class="blind">Secure Payments</span>
+                </span>
+                <h4 class="values_title">Secure Payments</h4>
+                <p class="values_desc">Secured by Stripe</p>
+              </div>
+              <div class="values_card">
+                <span class="icon icon_telephone">
+                  <span class="blind">24/7 Support</span>
+                </span>
+                <h4 class="values_title">24/7 Support</h4>
+                <p class="values_desc">Phone and Email support</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/ Values -->
+        <!-- Hero -->
+        <section class="hero">
+          <div class="hero_media">
+            <img src="../images/img_hero.png" alt="HUNDREDS of New lower prices!" class="hero_img" />
+          </div>
+          <div class="hero_box">
+            <p class="hero_label">SALE UP TO 35% OFF</p>
+            <a href="#none">
+              <h2 class="section_heading">HUNDREDS of<br />New lower prices!</h2>
+            </a>
+            <p class="hero_desc">It’s more affordable than ever to give every room in your home a stylish makeover</p>
+            <a href="#none" class="more_link">Shop Now<span class="icon icon_arrow_right"></span></a>
+          </div>
+        </section>
+        <!-- // Hero -->
+         <!-- Blog -->
+          <section class="blog"> 
+          <div class="inner">
+            <div class="section_top">
+              <h2 class="section_heading">Articles</h2>
+              <a href="#none" class="more_link">
+                More Articles
+                <span class="icon icon_arrow_right"></span>
+              </a>
+            </div>
+            <ul class="blog_list">
+              <li class="blog_item">
+                <article class="blog_box">
+                  <a href="#none" class="blog_img_link">
+                    <img src="../images/img_blog1.png" alt="7 ways to decor your home" class="img blog_img">
+                  </a>
+                  <a href="#none" class="blog_link">
+                    <h3 class="blog_title">7 ways to decor your home</h3>
+                  </a>
+                  <a href="#none" class="more_link">
+                    Read More
+                    <span class="icon icon_arrow_right"></span>
+                  </a>
+                </article>
+              </li>
+              <li class="blog_item">
+                <article class="blog_box">
+                  <a href="#none" class="blog_img_link">
+                    <img src="../images/img_blog2.png" alt="Kitchen organization" class="img blog_img">
+                  </a>
+                  <a href="#none" class="blog_link">
+                    <h3 class="blog_title">Kitchen organization</h3>
+                  </a>
+                  <a href="#none" class="more_link">
+                    Read More
+                    <span class="icon icon_arrow_right"></span>
+                  </a>
+                </article>
+              </li>
+              <li class="blog_item">
+                <article class="blog_box">
+                  <a href="#none" class="blog_img_link">
+                    <img src="../images/img_blog3.png" alt="Decor your bedroom" class="img blog_img">
+                  </a>
+                  <a href="#none" class="blog_link">
+                    <h3 class="blog_title">Decor your bedroom</h3>
+                  </a>
+                  <a href="#none" class="more_link">
+                    Read More
+                    <span class="icon icon_arrow_right"></span>
+                  </a>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </section>
+          <!-- // Blog -->
+           <!-- Newsletter -->
+            @@include("newsletter.html")
+           <!-- // Newsletter -->
       </main>
       @@include("footer.html")
       <div class="dimmed"></div>
