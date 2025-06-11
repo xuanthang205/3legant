@@ -1,283 +1,283 @@
-@use '../common/variables' as *;
+@use "../common/variables" as *;
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #fff;
 
-  &_area {
-    --width: calc(100% - 64px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: min(1120px, var(--width));
-    margin: 0 auto;
-    padding: 14px 0;
-  }
-
-  .logo_img {
-    margin-top: 3px;
-  }
-}
-
-.nav {
-  &_list {
-    display: flex;
-  }
-
-  &_item.is_active .nav_link {
-    color: $text-primary-color;
-  }
-
-  &_item + &_item {
-    margin-left: 12px;
-  }
-
-  &_link {
-    display: inline-block;
-    padding: 4px 14px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: $text-secondary-color;
-    line-height: 24px;
-    transition: color 0.3s ease-in-out;
-
-    &:hover {
-      color: $text-primary-color;
-    }
-  }
-}
-
-.header_area {
-  .action {
-    &_list {
-      display: flex;
-      align-items: center;
-      margin: 0 -4px;
-    }
-
-    &_link {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px;
-      box-sizing: border-box;
-    }
-
-    &_item + .action_item {
-      margin-left: 8px;
-    }
-
-    &_item:nth-child(3) {
-      margin-left: 9px;
-    }
-
-    &_link_icon {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-  }
-
-  .quantity {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: $text-primary-color;
-    font-size: 12px;
-    font-weight: 700;
-    color: #fff;
-    line-height: 10px;
-    cursor: default;
-  }
-}
-
-.header.is_show .input_wrap:focus-within {
-  border-color: #000;
-}
-
-@media (max-width: 768px) {
-  .nav_item + .nav_item {
-    margin-left: 0px;
-  }
-
-  .nav_link {
-    color: $text-primary-color;
-  }
-
-  .header {
-    .logo_img {
-      width: 70px;
+    &_area {
+        --width: calc(100% - 64px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: min(1120px, var(--width));
+        margin: 0 auto;
+        padding: 14px 0;
     }
 
     .logo_box {
-      display: flex;
-      align-items: center;
+        display: flex;
+        align-items: center;
     }
-
-    .btn_menu {
-      padding: 10px 4px 10px 10px;
-    }
-
-    .btn_close {
-      padding: 8px;
-    }
-  }
-
-  .header_area {
-    max-width: 100%;
-    padding: 8px 32px 8px 22px;
-  }
-
-  .header.is_show {
-    position: fixed;
-    inset: 0 8.53333% 0 0;
-    z-index: 3;
-    animation: moveInLeft 0.3s ease;
 
     .logo_img {
-      margin-top: 5px;
+        margin-top: 3px;
+    }
+}
+
+.nav {
+    &_list {
+        display: flex;
+    }
+
+    &_item.is_active .nav_link {
+        color: $text-primary-color;
+    }
+
+    &_item + &_item {
+        margin-left: 12px;
+    }
+
+    &_link {
+        display: inline-block;
+        padding: 4px 14px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: $text-secondary-color;
+        line-height: 24px;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: $text-primary-color;
+        }
+    }
+}
+
+.header_area {
+    .action {
+        &_list {
+            display: flex;
+            align-items: center;
+            margin: 0 -4px;
+        }
+
+        &_link {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px;
+            box-sizing: border-box;
+        }
+
+        &_item + .action_item {
+            margin-left: 8px;
+        }
+
+        &_item:nth-child(3) {
+            margin-left: 9px;
+        }
+
+        &_link_icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+
+    .quantity {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $text-primary-color;
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 10px;
+        cursor: default;
+    }
+}
+
+.header.is_show .input_wrap:focus-within {
+    border-color: #000;
+}
+
+@media (max-width: 768px) {
+    .nav_item + .nav_item {
+        margin-left: 0px;
+    }
+
+    .nav_link {
+        color: $text-primary-color;
+    }
+
+    .header {
+        .logo_img {
+            width: 70px;
+        }
+
+        .btn_menu {
+            padding: 10px 4px 10px 10px;
+        }
+
+        .btn_close {
+            padding: 8px;
+        }
     }
 
     .header_area {
-      flex-direction: column;
-      justify-content: initial;
-      align-items: initial;
-      height: 100%;
-      padding: 24px;
-      background-color: #fff;
-      box-sizing: border-box;
+        max-width: 100%;
+        padding: 8px 32px 8px 22px;
     }
 
-    .btn_menu {
-      display: none;
-    }
+    .header.is_show {
+        position: fixed;
+        inset: 0 8.532% 0 0;
+        z-index: 3;
+        animation: moveInLeft 0.3s ease;
 
-    .btn_close {
-      display: block;
-      position: absolute;
-      top: 16px;
-      right: 16px;
-    }
-
-    .input_wrap {
-      display: flex;
-      align-items: center;
-      height: 46px;
-      margin-top: 17px;
-      padding: 0 8px 0 15px;
-      border: 1px solid $text-secondary-color;
-      border-radius: 6px;
-      box-sizing: border-box;
-    }
-
-    .input {
-      width: 100%;
-      height: 100%;
-      padding: 0 8px;
-      font-size: 14px;
-      line-height: 22px;
-      outline: none;
-
-      &::placeholder {
-        font-family: 'Inter', sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-        color: $text-secondary-color;
-        letter-spacing: 0px;
-        line-height: 22px;
-      }
-    }
-
-    .nav {
-      display: block;
-      margin-top: -6px;
-
-      &_list {
-        flex-direction: column;
-      }
-
-      &_link {
-        display: block;
-        position: relative;
-        margin-top: 12px;
-        padding: 10px 0;
-        font-family: 'Inter', sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 24px;
-        box-sizing: border-box;
-
-        &::after {
-          bottom: -6px;
+        .logo_img {
+            margin-top: 5px;
         }
-      }
-    }
 
-    .action_link::after,
-    .nav_link::after {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background-color: #e8ecef;
-      pointer-events: none;
-      content: '';
-    }
-
-    .action_link::after {
-      bottom: -8px;
-    }
-
-    .action {
-      &_list {
-        flex-direction: column;
-        margin: auto 0 0;
-      }
-
-      &_item {
-        width: 100%;
-        margin-left: 0;
-
-        &_show {
-          display: flex;
+        .header_area {
+            flex-direction: column;
+            justify-content: initial;
+            align-items: initial;
+            height: 100%;
+            padding: 24px;
+            background-color: #fff;
+            box-sizing: border-box;
         }
-      }
 
-      &_link {
-        position: relative;
-        width: 100%;
-        padding: 0;
-      }
+        .btn_menu {
+            display: none;
+        }
 
-      &_item + .action_item {
-        margin-top: 16px;
-      }
-    }
+        .btn_close {
+            display: block;
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
 
-    .title {
-      display: block;
-      flex: 1;
-      font-size: 18px;
-      font-weight: 500;
-      color: $text-secondary-color;
-      letter-spacing: -0.4px;
-      line-height: 32px;
-    }
+        .input_wrap {
+            display: flex;
+            align-items: center;
+            height: 46px;
+            margin-top: 17px;
+            padding: 0 8px 0 15px;
+            border: 1px solid $text-secondary-color;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
 
-    .btn_signin {
-      --height: 52px;
-      display: block;
-      margin-top: 35px;
-      border-radius: 6px;
-      font-size: 18px;
+        .input {
+            width: 100%;
+            height: 100%;
+            padding: 0 8px;
+            font-size: 14px;
+            line-height: 22px;
+            outline: none;
+
+            &::placeholder {
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                color: $text-secondary-color;
+                letter-spacing: 0px;
+                line-height: 22px;
+            }
+        }
+
+        .nav {
+            display: block;
+            margin-top: -6px;
+
+            &_list {
+                flex-direction: column;
+            }
+
+            &_link {
+                display: block;
+                position: relative;
+                margin-top: 12px;
+                padding: 10px 0;
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 24px;
+                box-sizing: border-box;
+
+                &::after {
+                    bottom: -6px;
+                }
+            }
+        }
+
+        .action_link::after,
+        .nav_link::after {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #e8ecef;
+            pointer-events: none;
+            content: "";
+        }
+
+        .action_link::after {
+            bottom: -8px;
+        }
+
+        .action {
+            &_list {
+                flex-direction: column;
+                margin: auto 0 0;
+            }
+
+            &_item {
+                width: 100%;
+                margin-left: 0;
+
+                &_show {
+                    display: flex;
+                }
+            }
+
+            &_link {
+                position: relative;
+                width: 100%;
+                padding: 0;
+            }
+
+            &_item + .action_item {
+                margin-top: 16px;
+            }
+        }
+
+        .title {
+            display: block;
+            flex: 1;
+            font-size: 18px;
+            font-weight: 500;
+            color: $text-secondary-color;
+            letter-spacing: -0.4px;
+            line-height: 32px;
+        }
+
+        .btn_signin {
+            --height: 52px;
+            display: block;
+            margin-top: 35px;
+            border-radius: 6px;
+            font-size: 18px;
+        }
+        .social_list {
+            display: flex;
+            margin-top: 13px;
+        }
     }
-    .social_list {
-      display: flex;
-      margin-top: 13px;
-    }
-  }
 }

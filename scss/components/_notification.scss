@@ -9,8 +9,8 @@
 
   .text {
     margin-left: 12px;
-    font-weight: 600;
     font-size: 14px;
+    font-weight: 600;
     color: #343839;
     line-height: 22px;
   }
@@ -21,7 +21,6 @@
     font-size: 14px;
     color: #377dff;
     line-height: 24px;
-    letter-spacing: 0px;
 
     &::after {
       background-color: #377dff;
@@ -54,7 +53,7 @@
 @media (max-width: 768px) {
   .notification {
     height: 36px;
-    padding-right: 39px;
+    padding-right: 38px;
     .text {
       margin-left: 8px;
       font-size: 12px;
@@ -64,8 +63,8 @@
     .icon_ticket_percent {
       width: 16px;
       height: 16px;
-      background-size: 184px 34px;
-      background-position: -167px -0.7px;
+      background-size: 184px 51px;
+      background-position: -167px -1px;
     }
 
     .more_link {
@@ -73,14 +72,15 @@
     }
 
     .btn_close {
-      right: 12.2%;
+      right: 12.395%;
     }
 
     .icon_close {
-      width: 16px;
-      height: 16px;
-      background-size: 184px 34px;
-      background-position: -68px -0.7px;
+      // width: 16px;
+      // height: 16px;
+      // background-size: 184px 51px;
+      @extend .icon_ticket_percent;
+      background-position: -66px -1px;
     }
   }
 }

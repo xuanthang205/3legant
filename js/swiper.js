@@ -1,4 +1,4 @@
-const swiper = new Swiper('.slider_wrap', {
+const swiperSlider = new Swiper('.slider_wrap', {
   slidesPerView: 1,
   loop: true,
   pagination: {
@@ -10,9 +10,9 @@ const swiper = new Swiper('.slider_wrap', {
     prevEl: '.swiper-button-prev',
   },
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
-  },
+  }
 });
 
 const swiperProduct = new Swiper('.product_slides', {
@@ -27,6 +27,5 @@ const swiperProduct = new Swiper('.product_slides', {
   scrollbar: {
     el: '.swiper-scrollbar',
     draggable: true,
-  },
-  mousewheel: true
+  }
 });
