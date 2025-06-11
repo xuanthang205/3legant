@@ -187,6 +187,8 @@
     }
 
     &_card {
+        display: flex;
+        flex-direction: column;
         width: calc((100% - 72px) / 4);
         padding: 48px 32px;
         background-color: #f3f5f7;
@@ -213,8 +215,15 @@
         }
     }
 
-    &_title {
+    &_box {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: 8px;
         margin-top: 16px;
+    }
+
+    &_title {
         font-family: "Poppins", sans-serif;
         font-size: 20px;
         font-weight: 500;
@@ -223,62 +232,11 @@
     }
 
     &_desc {
-        margin-top: 8px;
+        margin-top: auto;
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         color: $text-secondary-color;
         line-height: 24px;
-    }
-}
-
-.hero {
-    display: flex;
-    &_media {
-        flex: 0 0 50%;
-        position: relative;
-        padding-top: 36.945%;
-    }
-
-    &_img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    &_box {
-        display: flex;
-        flex-grow: 1;
-        flex-direction: column;
-        justify-content: center;
-        padding: 59px 72px;
-        background-color: #f3f5f7;
-    }
-
-    &_label {
-        font-weight: 700;
-        font-size: 16px;
-        color: #377dff;
-        line-height: 16px;
-    }
-
-    &_desc,
-    .section_heading {
-        max-width: 452px;
-        margin-top: 16px;
-    }
-
-    &_desc {
-        font-size: 20px;
-        color: $text-primary-color;
-        line-height: 32px;
-    }
-
-    .more_link {
-        align-self: flex-start;
-        margin-top: 24px;
     }
 }
 
@@ -384,6 +342,10 @@
             padding: 32px 16px;
         }
 
+        &_box{
+            gap: 4px;
+        }
+
         &_title {
             font-family: "Inter", sans-serif;
             font-weight: 600;
@@ -392,31 +354,8 @@
         }
 
         &_desc {
-            margin-top: 4px;
             font-family: "Inter", sans-serif;
             line-height: 22px;
-        }
-    }
-
-    .hero {
-        flex-direction: column;
-
-        &_media {
-            padding-top: 97.87%;
-        }
-
-        &_box {
-            padding: 59px 32px;
-        }
-
-        &_desc,
-        .section_heading {
-            max-width: 100%;
-        }
-
-        &_desc {
-            font-size: 16px;
-            line-height: 26px;
         }
     }
 

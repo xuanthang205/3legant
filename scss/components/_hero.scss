@@ -1,0 +1,75 @@
+@use '../common/variables' as *;
+.hero {
+    display: flex;
+    &_media {
+        flex: 0 0 50%;
+        position: relative;
+        padding-top: 36.945%;
+    }
+
+    &_img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &_box {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: center;
+        padding: 59px 72px;
+        background-color: #f3f5f7;
+    }
+
+    &_label {
+        font-weight: 700;
+        font-size: 16px;
+        color: #377dff;
+        line-height: 16px;
+    }
+
+    &_desc,
+    .section_heading {
+        max-width: 452px;
+        margin-top: 16px;
+    }
+
+    &_desc {
+        font-size: 20px;
+        color: $text-primary-color;
+        line-height: 32px;
+    }
+
+    .more_link {
+        align-self: flex-start;
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+
+        &_media {
+            padding-top: 97.87%;
+        }
+
+        &_box {
+            padding: 59px 32px;
+        }
+
+        &_desc,
+        .section_heading {
+            max-width: 100%;
+        }
+
+        &_desc {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+}
