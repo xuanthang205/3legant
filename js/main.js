@@ -1,66 +1,16 @@
-// const header = document.querySelector('.header');
-// const menuBtn = document.querySelector('.header .btn_menu');
-// const closeBtn = document.querySelector('.header .btn_close');
-// const main = document.querySelector('.main');
-// const dimmed = document.querySelector('.dimmed');
-// const body = document.body;
-// // Function close menu
-// function closeMenu() {
-//   Object.assign(header.style, {
-//     transform: 'translateX(-100%)',
-//     transition: 'transform 0.3s ease',
-//   });
-//   setTimeout(() => {
-//     header.classList.remove('is_show');
-//     body.style.overflow = '';
-//     main.style.margin = '';
-//     Object.assign(header.style, {
-//       transform: 'translateX(0)',
-//       transition: '',
-//     });
-//   }, 300);
-//   dimmed.classList.remove('is_show');
-// }
-// // Function remove class is_show
-// function removeIsShowOnLargeScreen(...elements) {
-//   function handleResize() {
-//     if (window.innerWidth > 768) {
-//       elements.forEach((el) => el.classList.remove('is_show'));
-//       body.style.overflow = '';
-//       main.style.margin = '';
-//     }
-//   }
-//   handleResize();
-//   window.addEventListener('resize', handleResize);
-// }
-
-// menuBtn.addEventListener('click', () => {
-//   body.style.overflow = 'hidden';
-//   main.style.margin = '60px 0 0 0';
-//   dimmed.classList.add('is_show');
-//   header.classList.add('is_show');
-// });
-
-// closeBtn.addEventListener('click', closeMenu);
-// dimmed.addEventListener('click', closeMenu);
-// removeIsShowOnLargeScreen(header, dimmed);
-
-
-
+// Header
 const $header = $('.header');
 const $menuBtn = $('.header .btn_menu');
 const $closeHeaderBtn = $('.header .btn_close');
 const $main = $('.main');
 const $dimmed = $('.dimmed');
 const $body = $('body');
-
-// Đóng menu với hiệu ứng trượt
+// Close menu with slide effect
 function closeMenu() {
   $header.css({
     transform: 'translateX(-100%)',
     transition: 'transform 0.3s ease',
   });
-
   setTimeout(() => {
     $header.removeClass('is_show');
     $body.css('overflow', '');
@@ -72,7 +22,6 @@ function closeMenu() {
   }, 300);
   $dimmed.removeClass('is_show');
 }
-
 // Tự động đóng menu nếu đang mở khi resize lên desktop
 function removeIsShowOnLargeScreen(...$elements) {
   function handleResize() {
@@ -86,29 +35,24 @@ function removeIsShowOnLargeScreen(...$elements) {
       });
     }
   }
-
   handleResize();
   $(window).on('resize', handleResize);
 }
-
-// Mở menu
+// Open menu
 $menuBtn.on('click', () => {
   $body.css('overflow', 'hidden');
   $main.css('margin', '60px 0 0 0');
   $dimmed.addClass('is_show');
   $header.addClass('is_show');
 });
-
-// Đóng menu
+// Close menu
 $closeHeaderBtn.on('click', closeMenu);
 $dimmed.on('click', closeMenu);
-
-// Xử lý responsive
+// Handling responsiveness
 removeIsShowOnLargeScreen($header, $dimmed);
+// Header
 
-
-
-
+// Footer
 const footerCols = document.querySelectorAll('.footer_wrap .col');
 
 footerCols.forEach((col) => {
@@ -126,7 +70,6 @@ footerCols.forEach((col) => {
     });
   }
 });
-
 // Use debounce to avoid calling multiple times when resizing
 let resizeTimeout;
 window.addEventListener('resize', () => {
@@ -137,13 +80,16 @@ window.addEventListener('resize', () => {
     }
   }, 100); // 100ms delay to avoid lag
 });
+// Footer
 
+// Notification
 const $notification = $('.notification');
 const $closeBtn = $notification.find('.btn_close');
 
 $closeBtn.on('click', function () {
-  $notification.slideUp(200); // 300ms, có thể đổi thời gian
+  $notification.slideUp(200); // 300ms
 });
+// Notification
 
 
 

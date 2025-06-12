@@ -46,7 +46,7 @@
         content: '';
       }
 
-      .icon_letter{
+      .icon_letter {
         flex-shrink: 0;
       }
 
@@ -98,7 +98,7 @@
 }
 
 @media (max-width: 576px) {
-  .newsletter{
+  .newsletter {
     &_wrap {
       max-width: 100%;
       padding: 0 32px;
