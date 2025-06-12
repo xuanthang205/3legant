@@ -1,4 +1,5 @@
 @use './common/variables' as *;
+@use '../common/mixins';
 // Reset
 html,
 body,
@@ -109,6 +110,10 @@ a {
   }
 }
 
+.row {
+  @include mixins.center-between;
+}
+
 // Icon
 .icon {
   display: inline-block;
@@ -185,6 +190,14 @@ a {
   &_letter {
     background-position: -1px -50px;
   }
+
+  &_minus {
+    background-position: -51px -51px;
+  }
+
+  &_plus {
+    background-position: -26px -51px;
+  }
 }
 // //Icon
 
@@ -210,7 +223,13 @@ a {
 
   &.is_show {
     visibility: visible;
+    z-index: 3;
     opacity: 1;
+  }
+
+  &.is_show_menu {
+    @extend .is_show;
+    z-index: 2;
   }
 }
 // //Dimmed
@@ -328,6 +347,29 @@ a {
     background-image: url(../images/img_stars.png);
     background-size: cover;
     background-repeat: no-repeat;
+  }
+}
+
+.btn_quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 80px;
+  height: 32px;
+  margin-top: 8px;
+  border: 1px solid $text-secondary-color;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  .quantity {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .icon{
+    padding: 4px;
   }
 }
 

@@ -8,6 +8,9 @@
 @use './components/blog_list';
 @use './components/hero';
 @use './components/newsletter';
+@use './components/popup';
+@use './components/cart_list';
+@use './components/order_summary';
 @use './layout/header';
 @use './layout/footer';
 @use './pages/home';

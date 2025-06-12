@@ -1,0 +1,38 @@
+@use '../common/variables' as *;
+.order_summary {
+  margin-top: auto;
+  .row {
+    padding: 13px 0 12px;
+    color: $text-primary-color;
+    box-sizing: border-box;
+    &:first-child {
+      border-bottom: 1px solid #e8ecef;
+      .title,
+      .price {
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      .price {
+        font-weight: 600;
+      }
+    }
+
+    &:nth-child(2) {
+      .title,
+      .price {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  .btn_checkout{
+    --height: 52px;
+    width: 100%;
+    margin-top: 16px;
+    font-size: 18px;
+  }
+}
