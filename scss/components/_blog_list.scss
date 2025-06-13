@@ -1,3 +1,4 @@
+@use '../common/variables' as *;
 .blog_list {
   display: flex;
   margin-top: 40px;
@@ -40,7 +41,7 @@
 .blog_title {
   display: -webkit-box;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: $poppins;
   font-size: 20px;
   font-weight: 500;
   color: #23262f;
@@ -78,7 +79,7 @@
   }
 
   .blog_title {
-    font-family: 'Inter', sans-serif;
+    font-family: $inter;
     font-size: 16px;
     font-weight: 600;
     line-height: 26px;

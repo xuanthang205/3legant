@@ -1,6 +1,40 @@
 const $main = $('.main');
 const $dimmed = $('.dimmed');
 const $body = $('body');
+
+// Swiper
+const swiperSlider = new Swiper('.slider_wrap', {
+  // loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.btn_next',
+    prevEl: '.btn_prev',
+  },
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false,
+  // },
+});
+
+const swiperProduct = new Swiper('.product_slides', {
+  slidesPerView: 'auto',
+  spaceBetween: 16,
+  touchReleaseOnEdges: true,
+  breakpoints: {
+    768: {
+      spaceBetween: 24,
+    },
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true,
+  },
+});
+// Swiper
+
 // Notification
 const $notification = $('.notification');
 const $closeBtn = $notification.find('.btn_close');
@@ -10,12 +44,40 @@ $closeBtn.on('click', function () {
 });
 // Notification
 
+// Automatically close menu if open when resizing to desktop
+let prevIsDesktop = window.innerWidth > 768;
+function handleResize() {
+  const isDesktop = window.innerWidth > 768;
+  const isPopupOpen = $popup.hasClass('is_show');
+  const isMenuOpen = $header.hasClass('is_show');
+
+  // Chỉ xử lý khi có sự thay đổi giữa mobile <-> desktop
+  if (isDesktop !== prevIsDesktop) {
+    // Close popup if open
+    if (isPopupOpen) {
+      $popup.removeClass('is_show');
+      $dimmed.removeClass('is_show');
+      $body.css('overflow', '');
+    }
+
+    // Close menu if open
+    if (isMenuOpen) {
+      $header.removeClass('is_show');
+      $dimmed.removeClass('is_show_menu');
+      $body.css('overflow', '');
+      $main.css('margin', '');
+    }
+
+    // Update status for later comparison
+    prevIsDesktop = isDesktop;
+  }
+}
+
 // Header
 const $header = $('.header');
 const $menuBtn = $('.header .btn_menu');
 const $closeHeaderBtn = $('.header .btn_close');
 
-// Đóng menu với hiệu ứng
 function closeMenu() {
   $header.css({
     transform: 'translateX(-100%)',
@@ -24,7 +86,10 @@ function closeMenu() {
 
   setTimeout(() => {
     $header.removeClass('is_show');
-    $body.css('overflow', '');
+    $body.css({
+      overflow: '',
+      'overscroll-behavior': '',
+    });
     $main.css('margin', '');
     $header.css({
       transform: '',
@@ -34,40 +99,31 @@ function closeMenu() {
   $dimmed.removeClass('is_show_menu');
 }
 
-// Tự động đóng menu nếu đang mở khi resize lên desktop
-function handleResize() {
-  if (window.innerWidth > 768 && $header.hasClass('is_show')) {
-    // closeMenu();
-    $dimmed.removeClass('is_show_menu');
-    $header.removeClass('is_show');
-    $body.css('overflow', '');
-    $main.css('margin', '');
-  }
-}
-handleResize();
-$(window).on('resize', handleResize);
-
-// Mở menu
+// Open menu
 $menuBtn.on('click', () => {
-  $body.css('overflow', 'hidden');
+  $body.css({
+    overflow: 'hidden',
+    'overscroll-behavior': 'none',
+  });
   $main.css('margin', '60px 0 0 0');
   $dimmed.addClass('is_show_menu');
   $header.addClass('is_show');
 });
 
-// Click dimmed chỉ đóng menu nếu đang mở menu
+// Click dimmed only closes the menu if the menu is open
 $dimmed.on('click', () => {
   if ($dimmed.hasClass('is_show_menu')) {
-    closeMenu()
+    closeMenu();
   }
 });
 
-// Nút đóng trong header
 $closeHeaderBtn.on('click', closeMenu);
 
-const $cartBtn = $('.action_item:not(.mobile_hide)');
+// Popup cart
+const $cartBtn = $('#btn_cart');
 const $popup = $('.popup_wrap');
 const $closePopupBtn = $('.popup_wrap > .btn_close');
+const $cartItem = $('.popup_wrap .cart_item');
 
 $cartBtn.on('click', () => {
   if ($header.hasClass('is_show')) {
@@ -75,7 +131,10 @@ $cartBtn.on('click', () => {
   }
   $popup.addClass('is_show');
   $dimmed.addClass('is_show');
-  $body.css('overflow', 'hidden');
+  $body.css({
+    overflow: 'hidden',
+    'overscroll-behavior': 'none',
+  });
 });
 
 function closePopup(...elements) {
@@ -83,11 +142,23 @@ function closePopup(...elements) {
     $el.on('click', () => {
       $popup.removeClass('is_show');
       $dimmed.removeClass('is_show');
-      $body.css('overflow', '');
+      $body.css({
+        overflow: '',
+        'overscroll-behavior': '',
+      });
     });
   });
 }
 
-// Gọi:
 closePopup($dimmed, $closePopupBtn);
 
+$cartItem.each(function () {
+  const $item = $(this);
+  const $btnDeleteCart = $item.find('.btn_close');
+
+  $btnDeleteCart.on('click', () => {
+    $item.css('display', 'none');
+  });
+});
+
+$(window).on('resize', handleResize).trigger('resize');

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <title>3legant. : Homepage 01</title>
-    <link rel="stylesheet" type="text/css" href="../css/library/swiper.min.css" />
-    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./css/library/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
   </head>
   <body>
     <div class="home">
@@ -18,25 +18,29 @@
             <div class="swiper slider_wrap">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <picture class="slider_item">
-                    <source media="(max-width: 768px)" srcset="../images/img_slide1_mobile.png" />
-                    <img src="../images/img_slide1.png" alt="Innova" class="img" />
-                  </picture>
+                  <div class="slider_item">
+                    <img src="../images/img_slide1_mobile.png" alt="Innova" class="img mobile_only">
+                    <img src="../images/img_slide1.png" alt="Innova" class="img mobile_hide">
+                  </div>
                 </div>
                 <div class="swiper-slide">
                   <figure class="slider_item">
-                    <img src="../images/img_slide2.jpg" alt="Erado" class="img" />
+                    <img src="../images/img_slide2.jpg" alt="Erado" class="img">
                   </figure>
                 </div>
                 <div class="swiper-slide">
                   <figure class="slider_item">
-                    <img src="../images/img_slide3.webp" alt="Giovanni" class="img" />
+                    <img src="../images/img_slide3.webp" alt="Giovanni" class="img">
                   </figure>
                 </div>
               </div>
+              <button type="button" class="btn_slide btn_prev" aria-label="Prev">
+                <span class="icon icon_prev"></span>
+              </button>
+              <button type="button" class="btn_slide btn_next" aria-label="Next">
+                <span class="icon icon_next"></span>
+              </button>
               <div class="swiper-pagination"></div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
             </div>
             <div class="slider_box">
               <h2 class="heading">Simply Unique<span class="heading_accent">/</span> Simply Better<span class="heading_accent">.</span></h2>
@@ -54,48 +58,42 @@
             <div class="banner_wrap">
               <div class="banner_item">
                 <a href="#none" class="banner_link">
-                  <picture>
-                    <source media="(max-width: 768px)" srcset="../images/img_banner1_mobile.png" />
-                    <img src="../images/img_banner1.png" alt="Living Room" class="img" />
-                  </picture>
+                  <img src="../images/img_banner1_mobile.png" alt="Living Room" class="img mobile_only">
+                  <img src="../images/img_banner1.png" alt="Living Room" class="img mobile_hide">
+                  <div class="banner_content">
+                    <h3 class="banner_title">Living Room</h3>
+                    <span class="more_link">
+                      Shop Now
+                      <span class="icon icon_arrow_right"></span>
+                    </span>
+                  </div>
                 </a>
-                <div class="banner_content">
-                  <h3><a href="#none" class="banner_title">Living Room</a></h3>
-                  <a href="#none" class="more_link">
-                    Shop Now
-                    <span class="icon icon_arrow_right"></span>
-                  </a>
-                </div>
               </div>
               <div class="banner_item">
                 <a href="#none" class="banner_link">
-                  <picture>
-                    <source media="(max-width: 768px)" srcset="../images/img_banner2_mobile.png" />
-                    <img src="../images/img_banner2.png" alt="Bedroom" class="img" />
-                  </picture>
+                  <img src="../images/img_banner2_mobile.png" alt="Bedroom" class="img mobile_only">
+                  <img src="../images/img_banner2.png" alt="Bedroom" class="img mobile_hide">
+                  <div class="banner_content">
+                    <h3 class="banner_title">Bedroom</h3>
+                    <span class="more_link">
+                      Shop Now
+                      <span class="icon icon_arrow_right"></span>
+                    </span>
+                  </div>
                 </a>
-                <div class="banner_content">
-                  <h3><a href="#none" class="banner_title">Bedroom</a></h3>
-                  <a href="#none" class="more_link">
-                    Shop Now
-                    <span class="icon icon_arrow_right"></span>
-                  </a>
-                </div>
               </div>
               <div class="banner_item">
                 <a href="#none" class="banner_link">
-                  <picture>
-                    <source media="(max-width: 768px)" srcset="../images/img_banner3_mobile.png" />
-                    <img src="../images/img_banner3.png" alt="Kitchen" class="img" />
-                  </picture>
+                  <img src="../images/img_banner3_mobile.png" alt="Kitchen" class="img mobile_only">
+                  <img src="../images/img_banner3.png" alt="Kitchen" class="img mobile_hide">
+                  <div class="banner_content">
+                    <h3 class="banner_title">Kitchen</h3>
+                    <span class="more_link">
+                      Shop Now
+                      <span class="icon icon_arrow_right"></span>
+                    </span>
+                  </div>
                 </a>
-                <div class="banner_content">
-                  <h3><a href="#none" class="banner_title">Kitchen</a></h3>
-                  <a href="#none" class="more_link">
-                    Shop Now
-                    <span class="icon icon_arrow_right"></span>
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -115,60 +113,68 @@
           </div>
         </section>
         <!--/ Product -->
-        <!-- Values -->
-        <div class="values">
+        <!-- benefit -->
+        <div class="benefit">
           <div class="inner">
-            <div class="values_wrap">
-              <div class="values_card">
+            <div class="benefit_wrap">
+              <div class="benefit_card">
                 <span class="icon icon_car">
                   <span class="blind">Free Shipping</span>
                 </span>
-                <div class="values_box">
-                  <h4 class="values_title">Free Shipping</h4>
-                  <p class="values_desc">Order above $200</p>
+                <div class="benefit_box">
+                  <h4 class="benefit_title">Free Shipping</h4>
+                  <p class="benefit_desc">
+                    Order <br class="mobile_only">
+                    above $200
+                  </p>
                 </div>
               </div>
-              <div class="values_card">
+              <div class="benefit_card">
                 <span class="icon icon_refund">
                   <span class="blind">Money-back</span>
                 </span>
-                <div class="values_box">
-                  <h4 class="values_title">Money-back</h4>
-                  <p class="values_desc">30 days guarantee</p>
+                <div class="benefit_box">
+                  <h4 class="benefit_title">Money-back</h4>
+                  <p class="benefit_desc">30 days <br class="mobile_only"> guarantee</p>
                 </div>
               </div>
-              <div class="values_card">
+              <div class="benefit_card">
                 <span class="icon icon_lock">
                   <span class="blind">Secure Payments</span>
                 </span>
-                <div class="values_box">
-                  <h4 class="values_title">Secure Payments</h4>
-                  <p class="values_desc">Secured by Stripe</p>
+                <div class="benefit_box">
+                  <h4 class="benefit_title">Secure Payments</h4>
+                  <p class="benefit_desc">
+                    Secured <br class="mobile_only">
+                    by Stripe
+                  </p>
                 </div>
               </div>
-              <div class="values_card">
+              <div class="benefit_card">
                 <span class="icon icon_telephone">
                   <span class="blind">24/7 Support</span>
                 </span>
-                <div class="values_box">
-                  <h4 class="values_title">24/7 Support</h4>
-                  <p class="values_desc">Phone and Email support</p>
+                <div class="benefit_box">
+                  <h4 class="benefit_title">24/7 Support</h4>
+                  <p class="benefit_desc">
+                    Phone and <br class="mobile_only">
+                    Email support
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!--/ Values -->
+        <!--/ benefit -->
         <!-- Hero -->
         <section class="hero">
           <div class="hero_media">
-            <img src="../images/img_hero.png" alt="HUNDREDS of New lower prices!" class="hero_img" />
+            <img src="../images/img_hero_mobile.png" alt="HUNDREDS of New lower prices!" class="img mobile_only">
+            <img src="../images/img_hero.png" alt="HUNDREDS of New lower prices!" class="img mobile_hide">
           </div>
           <div class="hero_box">
             <p class="hero_label">SALE UP TO 35% OFF</p>
-            <a href="#none">
-              <h2 class="section_heading">HUNDREDS of<br />New lower prices!</h2>
-            </a>
+            <h2 class="section_heading">HUNDREDS of<br>New lower prices!</h2>
             <p class="hero_desc">It’s more affordable than ever to give every room in your home a stylish makeover</p>
             <a href="#none" class="more_link">Shop Now<span class="icon icon_arrow_right"></span></a>
           </div>
@@ -188,7 +194,7 @@
               <li class="blog_item">
                 <article class="blog_box">
                   <a href="#none" class="blog_img_link">
-                    <img src="../images/img_blog1.png" alt="7 ways to decor your home" class="img blog_img" />
+                    <img src="../images/img_blog1.png" alt="7 ways to decor your home" class="img blog_img">
                   </a>
                   <a href="#none" class="blog_link">
                     <h3 class="blog_title">7 ways to decor your home</h3>
@@ -202,7 +208,7 @@
               <li class="blog_item">
                 <article class="blog_box">
                   <a href="#none" class="blog_img_link">
-                    <img src="../images/img_blog2.png" alt="Kitchen organization" class="img blog_img" />
+                    <img src="../images/img_blog2.png" alt="Kitchen organization" class="img blog_img">
                   </a>
                   <a href="#none" class="blog_link">
                     <h3 class="blog_title">Kitchen organization</h3>
@@ -216,7 +222,7 @@
               <li class="blog_item">
                 <article class="blog_box">
                   <a href="#none" class="blog_img_link">
-                    <img src="../images/img_blog3.png" alt="Decor your bedroom" class="img blog_img" />
+                    <img src="../images/img_blog3.png" alt="Decor your bedroom" class="img blog_img">
                   </a>
                   <a href="#none" class="blog_link">
                     <h3 class="blog_title">Decor your bedroom</h3>
@@ -251,7 +257,7 @@
               <span class="icon icon_close"></span>
             </button>
             <figure class="cart_img_wrap">
-              <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" />
+              <img src="../images/img_product7.png" alt="Tray Table" class="cart_img">
             </figure>
             <div class="cart_info">
               <div class="row">
@@ -275,7 +281,7 @@
               <span class="icon icon_close"></span>
             </button>
             <figure class="cart_img_wrap">
-              <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" style="filter: hue-rotate(0deg)" />
+              <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" style="filter: hue-rotate(0deg)">
             </figure>
             <div class="cart_info">
               <div class="row">
@@ -299,31 +305,7 @@
               <span class="icon icon_close"></span>
             </button>
             <figure class="cart_img_wrap">
-              <img src="../images/img_product2.png" alt="Table lamp" class="cart_img" />
-            </figure>
-            <div class="cart_info">
-              <div class="row">
-                <span class="cart_text">Table lamp</span>
-                <span class="cart_text">$39.00</span>
-              </div>
-              <p class="cart_color">Color: Gold</p>
-              <div class="btn_quantity">
-                <button type="button" class="btn_minus" aria-label="Minus">
-                  <span class="icon icon_minus"></span>
-                </button>
-                <span class="quantity">2</span>
-                <button type="button" class="btn_plus" aria-label="Plus">
-                  <span class="icon icon_plus"></span>
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="cart_item">
-            <button type="button" class="btn_close" aria-label="Delete cart">
-              <span class="icon icon_close"></span>
-            </button>
-            <figure class="cart_img_wrap">
-              <img src="../images/img_product2.png" alt="Table lamp" class="cart_img" />
+              <img src="../images/img_product2.png" alt="Table lamp" class="cart_img">
             </figure>
             <div class="cart_info">
               <div class="row">
@@ -360,7 +342,6 @@
     <!-- popup -->
     <script src="../js/vendors/jquery/jquery.min.js"></script>
     <script src="../js/vendors/swiper/swiper.min.js"></script>
-    <script src="../js/swiper.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>

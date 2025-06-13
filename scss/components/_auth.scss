@@ -5,7 +5,7 @@
 
   .auth_banner {
     flex: 0 0 51.1111%;
-    background-image: url(../images/img_auth_banner.png);
+    background-image: url(../../images/img_auth_banner.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -30,7 +30,7 @@
   }
 
   .heading {
-    font-family: 'Poppins', sans-serif;
+    font-family: $poppins;
     font-weight: 500;
     font-size: 40px;
     color: $text-primary-color;
@@ -49,18 +49,18 @@
       font-size: 16px;
       line-height: 26px;
       font-weight: 600;
-      color: #38cb89;
+      color: $green-color;
     }
   }
 }
 
 .auth_form {
   margin-top: 18px;
-  .auth_input {
+  .form_input {
     display: flex;
     align-items: center;
     position: relative;
-    & + .auth_input {
+    & + .form_input {
       margin-top: 18px;
     }
 
@@ -147,8 +147,8 @@
 
   .auth_checkbox:checked {
     & + .auth_inline::before {
-      background-color: #38cb89;
-      border-color: #38cb89;
+      background-color: $text-primary-color;
+      border-color: $text-primary-color;
     }
   }
 }
@@ -185,6 +185,7 @@
     .auth_banner {
       width: 100%;
       min-height: 41.83vh;
+      background-image: url(../../images/img_auth_banner_mobile.png);
     }
 
     .auth_content {

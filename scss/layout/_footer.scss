@@ -50,9 +50,9 @@
     margin-right: -14px;
 
     &_link {
-      font-family: 'Inter', sans-serif;
+      font-family: $inter;
       font-weight: 400;
-      color: #777e90;
+      color: #fefefe;
       line-height: 22px;
       &:hover {
         text-decoration: underline;
@@ -68,11 +68,11 @@
 .copyright_wrap {
   display: flex;
   align-items: flex-start;
-  padding: 16px 0 10px;
+  padding: 15px 0 10px;
 }
 
 .copyright {
-  font-family: 'Poppins', sans-serif;
+  font-family: $poppins;
   font-size: 12px;
   color: #e8ecef;
   line-height: 20px;
@@ -132,6 +132,10 @@
 
 @media (max-width: 768px) {
   /* Footer */
+  .footer {
+    background-color: #232627;
+  }
+
   .footer .inner {
     padding: 48px 0;
   }
@@ -168,6 +172,7 @@
 
   .copyright {
     margin: 28px auto 0;
+    text-align: center;
   }
 
   .legal_list {

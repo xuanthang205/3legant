@@ -1,7 +1,10 @@
+// Common
 @use './common/variables';
 @use './common/fonts';
 @use './common/common';
 @use './common/mixins';
+
+// Component
 @use './components/auth';
 @use './components/notification';
 @use './components/product_card';
@@ -11,6 +14,10 @@
 @use './components/popup';
 @use './components/cart_list';
 @use './components/order_summary';
+
+// Layout
 @use './layout/header';
 @use './layout/footer';
+
+// Pages
 @use './pages/home';

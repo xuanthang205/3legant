@@ -1,3 +1,4 @@
+@use '../common/variables' as *;
 .popup {
   &_wrap {
     display: flex;
@@ -9,7 +10,7 @@
     z-index: 3;
     width: 413px;
     padding: 40px 0 40px 24px;
-    background-color: #fff;
+    background-color: $bg-primary-color;
     translate: 100% 0;
     transition: translate 0.3s ease;
     box-sizing: border-box;
@@ -26,7 +27,7 @@
     }
   }
   &_title {
-    font-family: 'Poppins', sans-serif;
+    font-family: $poppins;
     font-weight: 500;
     font-size: 28px;
     color: #121212;
@@ -44,8 +45,7 @@
 
   &_link {
     align-self: center;
-    margin-top: 10px;
-    padding: 6px 6px 0;
+    margin-top: 16px;
     border-bottom: 1px solid #121212;
     font-weight: 600;
     font-size: 14px;

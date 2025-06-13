@@ -1,7 +1,21 @@
-@mixin center-between($direction: row, $gap: null) {
+@use '../common/variables' as *;
+@mixin center-between($direction: null, $gap: null) {
   display: flex;
   flex-direction: $direction;
   justify-content: space-between;
   align-items: center;
   gap: $gap;
+}
+
+@mixin flex-center($width: 30px, $circle: null) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $width;
+  height: $width;
+  background-color: $bg-primary-color;
+
+  @if $circle == 'circle' {
+    border-radius: 50%;
+  }
 }

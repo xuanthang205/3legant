@@ -53,3 +53,14 @@
     line-height: 20px;
   }
 }
+
+@media (max-width: 768px) {
+  .cart{
+    &_item{
+      margin-top: 16px;
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+  }
+}

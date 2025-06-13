@@ -23,12 +23,16 @@ button {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body,
 input,
 select,
 textarea,
 button {
-  font-family: 'Inter', sans-serif;
+  font-family: $inter;
 }
 
 ol,
@@ -36,6 +40,10 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 a {
@@ -70,11 +78,6 @@ input {
   }
 }
 // //Animation
-picture {
-  position: absolute;
-  inset: 0;
-}
-
 button,
 a {
   -webkit-tap-highlight-color: transparent;
@@ -120,11 +123,10 @@ a {
   overflow: hidden;
   width: 24px;
   height: 24px;
-  background-image: url(../images/sp_icons.png);
+  background-image: url(../../images/sp_icons.png);
   background-repeat: no-repeat;
   background-size: 276px 76px;
   vertical-align: top;
-  cursor: pointer;
   box-sizing: border-box;
 
   &_search {
@@ -293,7 +295,7 @@ a {
   }
 
   &_heading {
-    font-family: 'Poppins', sans-serif;
+    font-family: $poppins;
     font-size: 40px;
     font-weight: 500;
     color: #000;
@@ -311,7 +313,7 @@ a {
   min-height: 24px;
   padding: 2px 4px;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: $bg-primary-color;
   font-weight: 700;
   font-size: 16px;
   box-sizing: border-box;
@@ -327,7 +329,7 @@ a {
 
   &_sale {
     min-width: 71px;
-    background-color: #38cb89;
+    background-color: $green-color;
     color: #fefefe;
   }
 }
@@ -336,7 +338,7 @@ a {
   width: 88px;
   height: 16px;
   margin-top: 12px;
-  background-image: url(../images/img_stars_bg.png);
+  background-image: url(../../images/img_stars_bg.png);
   background-size: 100%;
   background-repeat: no-repeat;
 
@@ -344,7 +346,7 @@ a {
     display: block;
     width: 0;
     height: 100%;
-    background-image: url(../images/img_stars.png);
+    background-image: url(../../images/img_stars.png);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -368,7 +370,7 @@ a {
     line-height: 20px;
   }
 
-  .icon{
+  .icon {
     padding: 4px;
   }
 }

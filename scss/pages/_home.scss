@@ -1,4 +1,5 @@
 @use '../common/variables' as *;
+@use '../common/mixins';
 .slider {
   .inner {
     padding-top: 0;
@@ -11,56 +12,58 @@
     padding-top: 47.858%;
   }
 
+  .btn_slide {
+    @include mixins.flex-center(52px, circle);
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.0364);
+    transform: translateY(-50%);
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      background-image: url(../../images/sp_icons_medium.png);
+      background-size: 246px 50px;
+      background-position: -197px -1px;
+    }
+  }
+
+  .btn_prev {
+    left: 32px;
+
+    .icon {
+      rotate: 180deg;
+    }
+  }
+
+  .btn_next {
+    right: 32px;
+  }
+
   .swiper-pagination {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    align-items: center;
+    overflow: hidden;
     bottom: 32px;
 
     &-bullet {
-      width: 8px;
-      height: 8px;
+      --swiper-pagination-bullet-horizontal-gap: 0;
       background-color: #fefefe;
-      border-radius: 50%;
       opacity: 1;
       transition: all 0.3s ease;
 
       &-active {
-        width: 30px;
-        border-radius: 100px;
+        --swiper-pagination-bullet-width: 30px;
+        border-radius: 50px;
         background-color: #fefefe;
       }
     }
-  }
 
-  .swiper-button-next,
-  .swiper-button-prev {
-    --swiper-navigation-sides-offset: 32px;
-    width: 52px;
-    height: 52px;
-    margin-top: 0;
-    border-radius: 50%;
-    background-color: #fff;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.0364);
-    transform: translateY(-50%);
-    -webkit-tap-highlight-color: transparent;
-
-    &::after {
-      overflow: hidden;
-      width: 32px;
-      height: 32px;
-      background-image: url(../images/sp_icons_medium.png);
-      background-repeat: no-repeat;
-      background-size: 246px 50px;
-      background-position: -206px -9px;
-      vertical-align: top;
-      box-sizing: border-box;
-      content: '';
-    }
-  }
-
-  .swiper-button-prev::after {
-    rotate: 180deg;
+    .swiper-pagination-bullet + .swiper-pagination-bullet {
+        margin-left: 16px;
+      }
   }
 
   &_box {
@@ -71,7 +74,7 @@
 
   .heading {
     max-width: 643px;
-    font-family: 'Poppins', sans-serif;
+    font-family: $poppins;
     font-size: 72px;
     font-weight: 500;
     color: #121212;
@@ -109,6 +112,7 @@
 
   &_item {
     position: relative;
+
     &:first-child {
       grid-row: span 2;
 
@@ -140,6 +144,9 @@
   }
 
   &_content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     position: absolute;
     top: auto;
     bottom: 12.5%;
@@ -149,7 +156,7 @@
   &_title {
     display: inline-block;
     margin-bottom: 12px;
-    font-family: 'Poppins', sans-serif;
+    font-family: $poppins;
     font-size: 34px;
     font-weight: 500;
     color: $text-primary-color;
@@ -175,7 +182,7 @@
   }
 }
 
-.values {
+.benefit {
   .inner {
     padding: 48px 0;
   }
@@ -195,7 +202,7 @@
     .icon {
       width: 48px;
       height: 48px;
-      background-image: url(../images/sp_icons_medium.png);
+      background-image: url(../../images/sp_icons_medium.png);
       background-size: 246px 50px;
       background-position: -1px -1px;
 
@@ -218,7 +225,7 @@
   }
 
   &_title {
-    font-family: 'Poppins', sans-serif;
+    font-family: $poppins;
     font-size: 20px;
     font-weight: 500;
     color: $text-primary-color;
@@ -227,7 +234,7 @@
 
   &_desc {
     margin-top: 8px;
-    font-family: 'Poppins', sans-serif;
+    font-family: $poppins;
     font-size: 14px;
     color: $text-secondary-color;
     line-height: 24px;
@@ -254,7 +261,7 @@
     }
   }
 
-  .values {
+  .benefit {
     &_wrap {
       gap: 24px;
     }
@@ -271,8 +278,7 @@
       padding-top: 97.75%;
     }
 
-    .swiper-button-next,
-    .swiper-button-prev {
+    .btn_slide {
       display: none;
     }
 
@@ -332,7 +338,7 @@
     }
   }
 
-  .values {
+  .benefit {
     .inner {
       padding: 32px 0;
     }
@@ -347,7 +353,7 @@
     }
 
     &_title {
-      font-family: 'Inter', sans-serif;
+      font-family: $inter;
       font-weight: 600;
       font-size: 14px;
       line-height: 22px;
@@ -355,7 +361,7 @@
 
     &_desc {
       margin-top: 4px;
-      font-family: 'Inter', sans-serif;
+      font-family: $inter;
       line-height: 22px;
     }
   }
