@@ -4,7 +4,7 @@ const $body = $('body');
 
 // Swiper
 const swiperSlider = new Swiper('.slider_wrap', {
-  // loop: true,
+  loop: true,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
@@ -13,10 +13,10 @@ const swiperSlider = new Swiper('.slider_wrap', {
     nextEl: '.btn_next',
     prevEl: '.btn_prev',
   },
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
 });
 
 const swiperProduct = new Swiper('.product_slides', {
@@ -51,7 +51,7 @@ function handleResize() {
   const isPopupOpen = $popup.hasClass('is_show');
   const isMenuOpen = $header.hasClass('is_show');
 
-  // Chỉ xử lý khi có sự thay đổi giữa mobile <-> desktop
+  // Only handle when there is a change between mobile <-> desktop
   if (isDesktop !== prevIsDesktop) {
     // Close popup if open
     if (isPopupOpen) {
