@@ -33,6 +33,61 @@ const swiperProduct = new Swiper('.product_slides', {
     draggable: true,
   },
 });
+
+const images = [
+  "../images/product_page/img_product_page_01.png",
+  "../images/product_page/img_product_page_05.png",
+  "../images/product_page/img_product_page_03.png",
+  "../images/product_page/img_product_page_02.png"
+];
+
+function updateThumbnails(swiperElement) {
+  const $thumbList = $(".product_thumb_list");
+  const currentIndex = swiperElement.realIndex;
+
+  $thumbList.empty(); // Delete old content
+
+  // Get 3 other photos than the active photo
+  const thumbIndexes = images
+    .map((img, i) => i)
+    .filter(i => i !== currentIndex)
+    .slice(0, 3);
+
+  // Create HTML
+  thumbIndexes.forEach((imgIndex) => {
+    const $li = $("<li>").addClass("product_thumb_item");
+    const $img = $("<img>")
+      .addClass("img")
+      .attr("src", images[imgIndex])
+      .attr("alt", `thumb ${imgIndex}`)
+      .prop("draggable", false);
+
+    $li.append($img);
+    $li.on("click", function () {
+      swiperElement.slideToLoop(imgIndex);
+    });
+
+    $thumbList.append($li);
+  });
+}
+
+const mainSwiper = new Swiper(".product_page_area .main-swiper", {
+  loop: true,
+  navigation: {
+    nextEl: ".btn_next",
+    prevEl: ".btn_prev",
+  },
+  on: {
+    init: function () {
+      updateThumbnails(this); // this = Swiper instance
+    },
+    slideChange: function () {
+      updateThumbnails(this);
+    }
+  }
+});
+
+
 // Swiper
 
 // Notification
@@ -162,3 +217,82 @@ $cartItem.each(function () {
 });
 
 $(window).on('resize', handleResize).trigger('resize');
+
+// Countdown
+function startCountdown(endTime) {
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = endTime - now;
+      // If time runs out → stop
+      if (distance <= 0) {
+        clearInterval(countdown);
+        $(".countdown_value").text("00");
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      $("#days").text(String(days).padStart(2, "0"));
+      $("#hours").text(String(hours).padStart(2, "0"));
+      $("#minutes").text(String(minutes).padStart(2, "0"));
+      $("#seconds").text(String(seconds).padStart(2, "0"));
+    }, 1000);
+  }
+
+  function createNewEndTime() {
+    const now = new Date();
+    now.setDate(now.getDate() + 2);        // +2 days
+    now.setHours(now.getHours() + 12);     // +12 hours
+    now.setMinutes(now.getMinutes() + 45); // +45 minutes
+    now.setSeconds(now.getSeconds() + 5);  // +5 seconds
+    return now.getTime();
+  }
+
+  $(document).ready(function () {
+    let savedEndTime = localStorage.getItem("countdown_end");
+
+    if (!savedEndTime || parseInt(savedEndTime) < Date.now()) {
+      // If not available or expired → create new
+      savedEndTime = createNewEndTime();
+      localStorage.setItem("countdown_end", savedEndTime);
+    }
+
+    startCountdown(parseInt(savedEndTime));
+  });
+  // Countdown
+
+  $(document).ready(function () {
+  $(".color_item").on("click", function () {
+    // 1. Bỏ class active cũ
+    $(".color_item").removeClass("is_active");
+
+    // 2. Gán class active mới
+    $(this).addClass("is_active");
+
+    // 3. Lấy màu từ data-color và cập nhật <p class="color">
+    const selectedColor = $(this).data("color");
+    $(".color").text(selectedColor);
+  });
+});
+
+$(document).on("click", ".btn_plus", function () {
+  const $wrap = $(this).closest(".btn_quantity");
+  const $qty = $wrap.find(".quantity");
+  let current = parseInt($qty.text());
+
+  $qty.text(current + 1);
+});
+
+$(document).on("click", ".btn_minus", function () {
+  const $wrap = $(this).closest(".btn_quantity");
+  const $qty = $wrap.find(".quantity");
+  let current = parseInt($qty.text());
+
+  if (current > 1) {
+    $qty.text(current - 1);
+  }
+});
+

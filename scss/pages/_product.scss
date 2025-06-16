@@ -1,0 +1,366 @@
+@use '../common/mixins';
+@use '../common/common';
+@use '../common/variables' as *;
+.product_page_wrap {
+  .product_page_area {
+    .inner {
+      padding: 0;
+    }
+
+    .product_page_box {
+      display: flex;
+    }
+
+    .product_media {
+      width: 48.93%;
+    }
+
+    .swiper-slide {
+      position: relative;
+      padding-top: 133.028%;
+    }
+
+    .badge_wrap {
+      z-index: 1;
+      top: 32px;
+      left: 32px;
+    }
+
+    .badge {
+      min-width: 79px;
+      min-height: 34px;
+      font-size: 18px;
+
+      &_sale {
+        min-width: 84px;
+      }
+    }
+
+    .product_box {
+      flex: 1;
+    }
+
+    .product_thumb_list {
+      display: flex;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .product_thumb_item {
+      flex-shrink: 0;
+      position: relative;
+      width: calc((100% - 48px) / 3);
+      padding-top: 30.413%;
+      cursor: pointer;
+    }
+
+    .btn_slide {
+      @include mixins.flex-center(40px, circle);
+    }
+
+    .product_content {
+      flex-grow: 1;
+      padding-left: 63px;
+    }
+
+    .product_info {
+      padding-bottom: 23px;
+      border-bottom: 1px solid #e8ecef;
+      box-sizing: border-box;
+    }
+
+    .product_rating {
+      display: flex;
+      align-items: center;
+
+      .rating {
+        margin-top: 0;
+      }
+
+      .review_count {
+        margin-left: 10px;
+        font-size: 12px;
+        color: $text-primary-color;
+        line-height: 20px;
+      }
+    }
+
+    .section_heading {
+      margin-top: 16px;
+    }
+
+    .desc {
+      margin-top: 16px;
+      font-size: 16px;
+      color: $text-secondary-color;
+      line-height: 26px;
+    }
+
+    .price {
+      font-family: $poppins;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 34px;
+      letter-spacing: -0.6px;
+
+      &_box {
+        display: flex;
+        align-items: center;
+        margin-top: 16px;
+      }
+
+      &_origin {
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 0px;
+      }
+    }
+
+    .product_countdown {
+      @extend .product_info;
+      padding-top: 24px;
+
+      .title {
+        font-size: 16px;
+        font-weight: 400;
+        color: #343839;
+        line-height: 26px;
+      }
+
+      .countdown {
+        margin-top: 12px;
+      }
+    }
+
+    .product_swatches {
+      @extend .product_countdown;
+
+      .title {
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-secondary-color;
+        line-height: 26px;
+      }
+
+      .size {
+        margin-top: 8px;
+        font-size: 20px;
+        color: #000;
+        line-height: 32px;
+
+        & + .title {
+          display: flex;
+          align-items: center;
+          margin-top: 24px;
+        }
+      }
+
+      .color {
+        @extend .size;
+      }
+    }
+
+    .size + .title::after {
+      @extend .icon;
+      margin-left: 4px;
+      background-position: -226px -1px;
+      rotate: -90deg;
+      content: '';
+    }
+
+    .color_list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+      padding-bottom: 24px;
+    }
+
+    .color_item {
+      position: relative;
+      width: 71px;
+      height: 71px;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+
+      &.is_active {
+        border-color: $text-primary-color;
+      }
+    }
+
+    .action {
+      margin-top: 32px;
+
+      .row {
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+
+      .btn_favorite {
+        --height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex-grow: 1;
+        border: 1px solid $text-primary-color;
+        background-color: #fff;
+        font-size: 18px;
+        color: $text-primary-color;
+        line-height: 32px;
+      }
+    }
+
+    .btn_quantity {
+      justify-content: space-between;
+      min-width: 127px;
+      height: 52px;
+      margin-top: 0;
+      padding: 12px 8px;
+      border: none;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+
+      .quantity {
+        font-size: 16px;
+      }
+    }
+
+    .btn_add {
+      --height: 52px;
+      width: 100%;
+      margin-top: 16px;
+      font-size: 18px;
+    }
+
+    .product_meta {
+      padding: 24px 0;
+
+      .row {
+        max-width: 147px;
+        margin-top: 8px;
+      }
+
+      .row:last-child {
+        max-width: 251px;
+      }
+
+      .meta_label {
+        font-size: 12px;
+        color: $text-secondary-color;
+        line-height: 20px;
+      }
+
+      .meta_value {
+        @extend .meta_label;
+        color: $text-primary-color;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px){
+.product_page_wrap{
+    .product_page_area{
+        .color_list{
+            gap: 12px;
+        }
+    }
+}
+}
+
+@media (max-width: 768px) {
+  .product_page_wrap {
+    .product_page_area {
+      .product_page_box {
+        flex-direction: column;
+      }
+      .product_media {
+        width: 100%;
+      }
+
+      .swiper-slide {
+        padding-top: 133.12%;
+      }
+
+      .product_thumb_list {
+        display: none;
+      }
+
+      .btn_prev {
+        left: 24px;
+      }
+
+      .btn_next {
+        right: 24px;
+      }
+
+      .badge_wrap {
+        top: 24px;
+        left: 24px;
+      }
+
+      .badge {
+        min-width: 74px;
+        min-height: 32px;
+        font-size: 16px;
+
+        &_sale {
+          min-width: 78px;
+          font-size: 18px;
+        }
+      }
+
+      .product_content {
+        padding: 32px 0 0;
+      }
+
+      .section_heading {
+        font-size: 40px;
+        line-height: 44px;
+        letter-spacing: -0.4px;
+      }
+
+      .color_list {
+        gap: 9px;
+      }
+
+      .btn_quantity {
+        min-width: 80px;
+        height: 32px;
+        padding: 0;
+
+        .quantity {
+          font-size: 12px;
+        }
+      }
+      .action {
+        margin-top: 24px;
+        .row {
+          gap: 8px;
+        }
+        .btn_favorite {
+          --height: 32px;
+          border-radius: 4px;
+          font-size: 14px;
+
+          .icon_like {
+            width: 16px;
+            height: 16px;
+            background-size: 184px 51px;
+            background-position: -84px -1px;
+          }
+        }
+      }
+      .btn_add {
+        --height: 32px;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      .product_meta{
+        padding-top: 18px;
+      }
+    }
+  }
+}

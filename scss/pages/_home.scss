@@ -1,6 +1,7 @@
 @use '../common/variables' as *;
 @use '../common/mixins';
-.slider {
+.home_wrap{
+  .slider {
   .inner {
     padding-top: 0;
     padding-bottom: 40px;
@@ -14,11 +15,6 @@
 
   .btn_slide {
     @include mixins.flex-center(52px, circle);
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.0364);
-    transform: translateY(-50%);
 
     .icon {
       width: 48px;
@@ -27,18 +23,6 @@
       background-size: 246px 50px;
       background-position: -197px -1px;
     }
-  }
-
-  .btn_prev {
-    left: 32px;
-
-    .icon {
-      rotate: 180deg;
-    }
-  }
-
-  .btn_next {
-    right: 32px;
   }
 
   .swiper-pagination {
@@ -239,8 +223,10 @@
     line-height: 24px;
   }
 }
+}
 
 @media (max-width: 992px) {
+.home_wrap{
   .slider {
     &_box {
       flex-direction: column;
@@ -270,8 +256,10 @@
     }
   }
 }
+}
 
 @media (max-width: 768px) {
+.home_wrap{
   .slider {
     &_item {
       padding-top: 97.75%;
@@ -370,4 +358,5 @@
       margin-top: auto;
     }
   }
+}
 }
