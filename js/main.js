@@ -19,7 +19,7 @@ const swiperSlider = new Swiper('.slider_wrap', {
   },
 });
 
-const swiperProduct = new Swiper('.product_slides', {
+const swiperProductCard = new Swiper('.product_slides', {
   slidesPerView: 'auto',
   spaceBetween: 16,
   touchReleaseOnEdges: true,
@@ -34,15 +34,11 @@ const swiperProduct = new Swiper('.product_slides', {
   },
 });
 
-const images = [
-  "../images/product_page/img_product_page_01.png",
-  "../images/product_page/img_product_page_05.png",
-  "../images/product_page/img_product_page_03.png",
-  "../images/product_page/img_product_page_02.png"
-];
+// 01 Product Slider
+const images = ['../images/product_page/img_product01.png', '../images/product_page/img_product02.png', '../images/product_page/img_product03.png', '../images/product_page/img_product04.png'];
 
 function updateThumbnails(swiperElement) {
-  const $thumbList = $(".product_thumb_list");
+  const $thumbList = $('.product_thumb_list');
   const currentIndex = swiperElement.realIndex;
 
   $thumbList.empty(); // Delete old content
@@ -50,20 +46,16 @@ function updateThumbnails(swiperElement) {
   // Get 3 other photos than the active photo
   const thumbIndexes = images
     .map((img, i) => i)
-    .filter(i => i !== currentIndex)
+    .filter((i) => i !== currentIndex)
     .slice(0, 3);
 
   // Create HTML
   thumbIndexes.forEach((imgIndex) => {
-    const $li = $("<li>").addClass("product_thumb_item");
-    const $img = $("<img>")
-      .addClass("img")
-      .attr("src", images[imgIndex])
-      .attr("alt", `thumb ${imgIndex}`)
-      .prop("draggable", false);
+    const $li = $('<li>').addClass('product_thumb_item');
+    const $img = $('<img>').addClass('img').attr('src', images[imgIndex]).attr('alt', `thumb ${imgIndex}`).prop('draggable', false);
 
     $li.append($img);
-    $li.on("click", function () {
+    $li.on('click', function () {
       swiperElement.slideToLoop(imgIndex);
     });
 
@@ -71,11 +63,11 @@ function updateThumbnails(swiperElement) {
   });
 }
 
-const mainSwiper = new Swiper(".product_page_area .main-swiper", {
+const mainSwiper = new Swiper('.product_area .main-swiper', {
   loop: true,
   navigation: {
-    nextEl: ".btn_next",
-    prevEl: ".btn_prev",
+    nextEl: '.btn_next',
+    prevEl: '.btn_prev',
   },
   on: {
     init: function () {
@@ -83,10 +75,10 @@ const mainSwiper = new Swiper(".product_page_area .main-swiper", {
     },
     slideChange: function () {
       updateThumbnails(this);
-    }
-  }
+    },
+  },
 });
-
+// 01 Product Slider
 
 // Swiper
 
@@ -220,79 +212,223 @@ $(window).on('resize', handleResize).trigger('resize');
 
 // Countdown
 function startCountdown(endTime) {
-    const countdown = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = endTime - now;
-      // If time runs out → stop
-      if (distance <= 0) {
-        clearInterval(countdown);
-        $(".countdown_value").text("00");
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((distance / (1000 * 60)) % 60);
-      const seconds = Math.floor((distance / 1000) % 60);
-
-      $("#days").text(String(days).padStart(2, "0"));
-      $("#hours").text(String(hours).padStart(2, "0"));
-      $("#minutes").text(String(minutes).padStart(2, "0"));
-      $("#seconds").text(String(seconds).padStart(2, "0"));
-    }, 1000);
-  }
-
-  function createNewEndTime() {
-    const now = new Date();
-    now.setDate(now.getDate() + 2);        // +2 days
-    now.setHours(now.getHours() + 12);     // +12 hours
-    now.setMinutes(now.getMinutes() + 45); // +45 minutes
-    now.setSeconds(now.getSeconds() + 5);  // +5 seconds
-    return now.getTime();
-  }
-
-  $(document).ready(function () {
-    let savedEndTime = localStorage.getItem("countdown_end");
-
-    if (!savedEndTime || parseInt(savedEndTime) < Date.now()) {
-      // If not available or expired → create new
-      savedEndTime = createNewEndTime();
-      localStorage.setItem("countdown_end", savedEndTime);
+  const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = endTime - now;
+    // If time runs out → stop
+    if (distance <= 0) {
+      clearInterval(countdown);
+      $('.countdown_value').text('00');
+      return;
     }
 
-    startCountdown(parseInt(savedEndTime));
-  });
-  // Countdown
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
 
-  $(document).ready(function () {
-  $(".color_item").on("click", function () {
-    // 1. Bỏ class active cũ
-    $(".color_item").removeClass("is_active");
+    $('#days').text(String(days).padStart(2, '0'));
+    $('#hours').text(String(hours).padStart(2, '0'));
+    $('#minutes').text(String(minutes).padStart(2, '0'));
+    $('#seconds').text(String(seconds).padStart(2, '0'));
+  }, 1000);
+}
 
-    // 2. Gán class active mới
-    $(this).addClass("is_active");
+function createNewEndTime() {
+  const now = new Date();
+  now.setDate(now.getDate() + 2); // +2 days
+  now.setHours(now.getHours() + 12); // +12 hours
+  now.setMinutes(now.getMinutes() + 45); // +45 minutes
+  now.setSeconds(now.getSeconds() + 5); // +5 seconds
+  return now.getTime();
+}
 
-    // 3. Lấy màu từ data-color và cập nhật <p class="color">
-    const selectedColor = $(this).data("color");
-    $(".color").text(selectedColor);
+$(document).ready(function () {
+  let savedEndTime = localStorage.getItem('countdown_end');
+
+  if (!savedEndTime || parseInt(savedEndTime) < Date.now()) {
+    // If not available or expired → create new
+    savedEndTime = createNewEndTime();
+    localStorage.setItem('countdown_end', savedEndTime);
+  }
+
+  startCountdown(parseInt(savedEndTime));
+});
+// Countdown
+
+// Choose product color
+$(document).ready(function () {
+  $('.color_item').on('click', function () {
+    $('.color_item').removeClass('is_active');
+    $(this).addClass('is_active');
+    // Get color from data-color and update <p class="color">
+    const selectedColor = $(this).data('color');
+    $('.color').text(selectedColor);
   });
 });
 
-$(document).on("click", ".btn_plus", function () {
-  const $wrap = $(this).closest(".btn_quantity");
-  const $qty = $wrap.find(".quantity");
+// Btn quantity
+$(document).on('click', '.btn_plus', function () {
+  const $wrap = $(this).closest('.btn_quantity');
+  const $qty = $wrap.find('.quantity');
   let current = parseInt($qty.text());
 
   $qty.text(current + 1);
 });
 
-$(document).on("click", ".btn_minus", function () {
-  const $wrap = $(this).closest(".btn_quantity");
-  const $qty = $wrap.find(".quantity");
+$(document).on('click', '.btn_minus', function () {
+  const $wrap = $(this).closest('.btn_quantity');
+  const $qty = $wrap.find('.quantity');
   let current = parseInt($qty.text());
 
   if (current > 1) {
     $qty.text(current - 1);
   }
 });
+
+// Select
+$(document).ready(function () {
+  const $select = $('.select');
+  const $optionBtn = $select.find('.btn_option');
+  const $options = $select.find('.select_option');
+  const $selectItems = $select.find('.select_item');
+  const $activeItem = $select.find('.select_item.is_active');
+
+  if ($activeItem.length) {
+    const text = $activeItem.find('.select_link').text();
+    $optionBtn.text(text);
+  }
+
+  $optionBtn.on('click', function () {
+    $optionBtn.toggleClass('is_show');
+    $options.toggleClass('is_show');
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.select').length) {
+      $optionBtn.removeClass('is_show');
+      $options.removeClass('is_show');
+    }
+  });
+
+  $selectItems.on('click', function () {
+    const text = $(this).find('.select_link').text();
+
+    $select.find('.select_item.is_active').removeClass('is_active');
+    $(this).addClass('is_active');
+
+    $optionBtn.text(text);
+    $optionBtn.removeClass('is_show');
+    $options.removeClass('is_show');
+  });
+
+  $(window).on('resize', function () {
+    if (window.innerWidth > 768) {
+      $optionBtn.removeClass('is_show');
+      $options.removeClass('is_show');
+    }
+  });
+});
+
+// Select
+
+// Emoji
+$(document).ready(function () {
+  const HOLD_DELAY = 300;
+
+  $('.emoji_wrap').each(function () {
+    const $wrap = $(this);
+    const $btn = $wrap.find('.btn_emoji');
+    const $popup = $wrap.find('.emoji_popup');
+    let holdTimer = null;
+    let popupShown = false;
+    let holdStarted = false;
+    let currentEmoji = null;
+
+    function startHold(e) {
+      e.preventDefault();
+      holdStarted = true;
+      popupShown = false;
+
+      holdTimer = setTimeout(() => {
+        $popup.css('display', 'flex');
+        popupShown = true;
+      }, HOLD_DELAY);
+    }
+
+    function endHold(e) {
+      clearTimeout(holdTimer);
+      if (!holdStarted) return;
+      holdStarted = false;
+
+      const touch = e.changedTouches ? e.changedTouches[0] : e;
+      const x = touch.clientX;
+      const y = touch.clientY;
+      const $target = $(document.elementFromPoint(x, y));
+
+      // If the popup is open, select the emoji at the finger position
+      if (popupShown) {
+        $popup.hide();
+        popupShown = false;
+        $popup.find('.emoji').removeClass('is_hover');
+
+        if ($target.hasClass('emoji')) {
+          const label = $target.data('label');
+          const src = $target.attr('src');
+
+          if (label === currentEmoji) {
+            $btn.text('Like');
+            currentEmoji = null;
+          } else {
+            $btn.html(`<img src="${src}" alt="${label}" class="emoji">`);
+            currentEmoji = label;
+          }
+        }
+        return;
+      }
+
+      // If you quickly click on the emoji button itself
+      if ($target.closest('.btn_emoji')[0] === $btn[0]) {
+        if (currentEmoji !== null) {
+          $btn.text('Like');
+          currentEmoji = null;
+        } else {
+          const $likeEmoji = $popup.find('.emoji[data-label="Like"]');
+          const src = $likeEmoji.attr('src');
+          $btn.html(`<img src="${src}" alt="Like" class="emoji">`);
+          currentEmoji = 'Like';
+        }
+      }
+    }
+
+    // Touch move → hover emoji on mobile
+    $(document).on('touchmove', function (e) {
+      if (!popupShown) return;
+
+      const touch = e.touches[0];
+      const x = touch.clientX;
+      const y = touch.clientY;
+      const $target = $(document.elementFromPoint(x, y));
+
+      $popup.find('.emoji').removeClass('is_hover');
+      if ($target.hasClass('emoji')) {
+        $target.addClass('is_hover');
+      }
+    });
+
+    // Assign event to each emoji_wrap
+    $btn.on('mousedown touchstart', startHold);
+    $(document).on('mouseup touchend', endHold);
+  });
+});
+// Emoji
+
+// Show comment
+const $btnMoreComment = $('.tab_content .btn_more')
+const $comments = $('.tab_content .comments')
+$btnMoreComment.on('click', () => {
+  const $isExpanded = $comments.hasClass('expanded');
+  $comments.toggleClass('is_show');
+  $(this).text($isExpanded ? 'Load more' : 'Show less');
+})
 

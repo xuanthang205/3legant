@@ -1,9 +1,9 @@
 @use '../common/variables' as *;
-.product_area {
+.product_card_area {
   margin-top: 48px;
 }
 
-.product_card {
+.product_card_item {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -31,7 +31,7 @@
   }
 }
 
-.product_box {
+.product_card_box {
   overflow: hidden;
   position: relative;
 
@@ -62,7 +62,7 @@
   }
 }
 
-.product_img_wrap {
+.product_card_img {
   display: block;
   position: relative;
   padding-top: 133.21%;
@@ -98,7 +98,7 @@
 }
 
 @media (max-width: 768px) {
-  .product_area {
+  .product_card_area {
     margin-top: 40px;
   }
 
@@ -106,7 +106,7 @@
     width: 231px;
   }
 
-  .product_box {
+  .product_card_box {
     .btn_add {
       --height: 41px;
       bottom: 14px;
@@ -121,7 +121,7 @@
     }
   }
 
-  .product_img_wrap {
+  .product_card_img {
     padding-top: 133.34%;
   }
 
