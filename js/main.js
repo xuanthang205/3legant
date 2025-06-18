@@ -334,8 +334,6 @@ $(document).ready(function () {
 
 // Emoji
 $(document).ready(function () {
-  const HOLD_DELAY = 300;
-
   $('.emoji_wrap').each(function () {
     const $wrap = $(this);
     const $btn = $wrap.find('.btn_emoji');
@@ -353,7 +351,7 @@ $(document).ready(function () {
       holdTimer = setTimeout(() => {
         $popup.css('display', 'flex');
         popupShown = true;
-      }, HOLD_DELAY);
+      }, 300);
     }
 
     function endHold(e) {
@@ -423,12 +421,123 @@ $(document).ready(function () {
 });
 // Emoji
 
-// Show comment
-const $btnMoreComment = $('.tab_content .btn_more')
-const $comments = $('.tab_content .comments')
-$btnMoreComment.on('click', () => {
-  const $isExpanded = $comments.hasClass('expanded');
-  $comments.toggleClass('is_show');
-  $(this).text($isExpanded ? 'Load more' : 'Show less');
-})
+
+$(document).ready(function () {
+  const $menuItems = $('.tabs .menu .menu_item'); // PC tab
+  const $tabContents = $('.tab_content_wrap');    // Nội dung
+  const $tabHeaders = $('.tab_content_wrap .menu_item'); // Mobile tab
+
+  let wasMobile = window.innerWidth <= 768;
+  let lastActiveIndex = -1;
+
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  function resetAllTabs() {
+    $tabContents.removeClass('is_active');
+    $menuItems.removeClass('is_active');
+    $tabHeaders.removeClass('is_active');
+
+    if (isMobile()) {
+      $tabContents.find('.tab_content').stop(true, true).slideUp(300);
+    } else {
+      $tabContents.find('.tab_content').hide();
+    }
+  }
+
+  function activateTab(index) {
+    lastActiveIndex = index;
+    $tabContents.eq(index).addClass('is_active');
+
+    if (isMobile()) {
+      $tabHeaders.eq(index).addClass('is_active');
+      $tabContents.eq(index).find('.tab_content').stop(true, true).slideDown(300);
+    } else {
+      $menuItems.eq(index).addClass('is_active');
+      $tabContents.eq(index).find('.tab_content').show();
+    }
+  }
+
+  // PC: click menu item
+  $menuItems.each(function (index) {
+    $(this).on('click', function () {
+      if (!isMobile()) {
+        resetAllTabs();
+        activateTab(index);
+      }
+    });
+  });
+
+  // Mobile: click item trong content
+  $tabHeaders.each(function () {
+    $(this).on('click', function () {
+      if (isMobile()) {
+        const $wrap = $(this).closest('.tab_content_wrap');
+        const $content = $wrap.find('.tab_content');
+        const index = $tabContents.index($wrap);
+
+        if ($content.is(':visible')) {
+          // Đang mở → đóng lại (có hiệu ứng)
+          $(this).removeClass('is_active');
+          $wrap.removeClass('is_active');
+          $content.stop(true, true).slideUp(300);
+          lastActiveIndex = -1;
+        } else {
+          // Đang đóng → mở ra
+          resetAllTabs();
+          activateTab(index);
+          setTimeout(() => {
+            $wrap[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 310);
+        }
+      }
+    });
+  });
+
+  function adjustOnResize() {
+    const nowMobile = isMobile();
+
+    if (nowMobile && !wasMobile) {
+      // PC → mobile: ẩn hết
+      resetAllTabs();
+    }
+
+    if (!nowMobile && wasMobile) {
+      // Mobile → PC: giữ tab đang active (nếu có)
+      resetAllTabs();
+      if (lastActiveIndex !== -1) {
+        activateTab(lastActiveIndex);
+      } else {
+        activateTab(0);
+      }
+    }
+
+    // Toggle giao diện
+    if (nowMobile) {
+      $menuItems.parent().hide();
+      $tabHeaders.show();
+    } else {
+      $menuItems.parent().show();
+      $tabHeaders.hide();
+    }
+
+    wasMobile = nowMobile;
+  }
+
+  $(window).on('resize', adjustOnResize);
+  adjustOnResize();
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
