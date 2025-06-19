@@ -63,7 +63,7 @@ function updateThumbnails(swiperElement) {
   });
 }
 
-const mainSwiper = new Swiper('.product_area .main-swiper', {
+const swiperProductSlide = new Swiper('.product_area .product_slide_wrap', {
   loop: true,
   navigation: {
     nextEl: '.btn_next',
@@ -133,10 +133,12 @@ function closeMenu() {
 
   setTimeout(() => {
     $header.removeClass('is_show');
-    $body.css({
-      overflow: '',
-      'overscroll-behavior': '',
-    });
+    if (!$('.popup_wrap').hasClass('is_show')) {
+      $body.css({
+        overflow: '',
+        'overscroll-behavior': '',
+      });
+    }
     $main.css('margin', '');
     $header.css({
       transform: '',
@@ -344,7 +346,7 @@ $(document).ready(function () {
     let currentEmoji = null;
 
     function startHold(e) {
-      e.preventDefault();
+      e.preventDefault(); // Default action (can select text or scroll)
       holdStarted = true;
       popupShown = false;
 
@@ -359,10 +361,11 @@ $(document).ready(function () {
       if (!holdStarted) return;
       holdStarted = false;
 
+      // Get finger/click coordinates: use changedTouches for mobile, or e (mouse)
       const touch = e.changedTouches ? e.changedTouches[0] : e;
       const x = touch.clientX;
       const y = touch.clientY;
-      const $target = $(document.elementFromPoint(x, y));
+      const $target = $(document.elementFromPoint(x, y)); // Find the element just below the touch point
 
       // If the popup is open, select the emoji at the finger position
       if (popupShown) {
@@ -421,10 +424,10 @@ $(document).ready(function () {
 });
 // Emoji
 
-
+// Change tab
 $(document).ready(function () {
   const $menuItems = $('.tabs .menu .menu_item'); // PC tab
-  const $tabContents = $('.tab_content_wrap');    // Nội dung
+  const $tabContents = $('.tab_content_wrap'); 
   const $tabHeaders = $('.tab_content_wrap .menu_item'); // Mobile tab
 
   let wasMobile = window.innerWidth <= 768;
@@ -469,7 +472,7 @@ $(document).ready(function () {
     });
   });
 
-  // Mobile: click item trong content
+  // Mobile: click item in content
   $tabHeaders.each(function () {
     $(this).on('click', function () {
       if (isMobile()) {
@@ -478,13 +481,11 @@ $(document).ready(function () {
         const index = $tabContents.index($wrap);
 
         if ($content.is(':visible')) {
-          // Đang mở → đóng lại (có hiệu ứng)
           $(this).removeClass('is_active');
           $wrap.removeClass('is_active');
           $content.stop(true, true).slideUp(300);
           lastActiveIndex = -1;
         } else {
-          // Đang đóng → mở ra
           resetAllTabs();
           activateTab(index);
           setTimeout(() => {
@@ -499,12 +500,12 @@ $(document).ready(function () {
     const nowMobile = isMobile();
 
     if (nowMobile && !wasMobile) {
-      // PC → mobile: ẩn hết
+      // PC → mobile: hide all
       resetAllTabs();
     }
 
     if (!nowMobile && wasMobile) {
-      // Mobile → PC: giữ tab đang active (nếu có)
+      // Mobile → PC: active tab (if any)
       resetAllTabs();
       if (lastActiveIndex !== -1) {
         activateTab(lastActiveIndex);
@@ -513,7 +514,7 @@ $(document).ready(function () {
       }
     }
 
-    // Toggle giao diện
+    // Toggle the interface
     if (nowMobile) {
       $menuItems.parent().hide();
       $tabHeaders.show();
@@ -528,16 +529,47 @@ $(document).ready(function () {
   $(window).on('resize', adjustOnResize);
   adjustOnResize();
 });
+// Change tab
 
+// Load comment
+$(document).ready(function () {
+  const $comments = $('.comments .comment_box');
+  const $btnMore = $('.btn_more');
+  const maxToShow = 5;
+  let isExpanded = false;
 
+  function collapseComments() {
+    $comments.each(function (i) {
+      if (i < maxToShow) {
+        $(this).stop(true, true).slideDown(300);
+      } else {
+        $(this).stop(true, true).slideUp(300);
+      }
+    });
+    $btnMore.text('Load more');
+    isExpanded = false;
+  }
 
+  function expandComments() {
+    $comments.stop(true, true).slideDown(300);
+    $btnMore.text('Collapse');
+    isExpanded = true;
+  }
 
+  // Initial setup
+  if ($comments.length > maxToShow) {
+    collapseComments();
+    $btnMore.show();
+  } else {
+    $btnMore.hide();
+  }
 
-
-
-
-
-
-
-
-
+  $btnMore.on('click', function () {
+    if (isExpanded) {
+      collapseComments();
+    } else {
+      expandComments();
+    }
+  });
+});
+// Load comment

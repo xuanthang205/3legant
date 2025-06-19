@@ -93,7 +93,9 @@ a {
 
 .btn {
   --height: 46px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: min(183px, 100%);
   height: var(--height);
   border-radius: 8px;
@@ -102,8 +104,6 @@ a {
   font-weight: 500;
   color: #fff;
   letter-spacing: -0.4px;
-  text-align: center;
-  line-height: var(--height);
   transition: opacity 0.3s ease;
   cursor: pointer;
   box-sizing: border-box;
