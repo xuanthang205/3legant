@@ -1,0 +1,73 @@
+@use '../common/mixins';
+@use '../common/variables' as *;
+.section_header {
+  position: relative;
+  padding-top: 35%;
+  text-align: center;
+
+  &_area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 413px;
+    transform: translate(-50%, -50%);
+  }
+
+  .breadcrumbs {
+    border: none;
+
+    &_list {
+      justify-content: center;
+    }
+  }
+
+  .title {
+    margin-top: 24px;
+    font-family: $poppins;
+    font-size: 54px;
+    font-weight: 500;
+    color: #000;
+    letter-spacing: -1px;
+    line-height: 58px;
+  }
+
+  .desc {
+    margin-top: 24px;
+    font-size: 20px;
+    color: #121212;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section_header {
+    padding-top: 99.04%;
+
+    &_area {
+      width: 100%;
+      max-width: initial;
+    }
+
+    .title {
+      margin-top: 16px;
+      font-size: 40px;
+      line-height: 44px;
+      letter-spacing: -0.4px;
+    }
+
+    .desc {
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    .breadcrumbs_link {
+      font-size: 14px;
+      line-height: 24px;
+    }
+    
+    .breadcrumbs_item:not(.is_active)::after {
+      top: 0;
+    }
+  }
+}

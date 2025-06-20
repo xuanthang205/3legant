@@ -534,7 +534,7 @@ $(document).ready(function () {
 // Load comment
 $(document).ready(function () {
   const $comments = $('.comments .comment_box');
-  const $btnMore = $('.btn_more');
+  const $btnMore = $('.comments + .btn_more');
   const maxToShow = 5;
   let isExpanded = false;
 
@@ -573,3 +573,15 @@ $(document).ready(function () {
   });
 });
 // Load comment
+
+// Shop sidebar 
+$(function(){
+  $('.sidebar_list').on('click', '.sidebar_item', function(){
+    // Get the correct parent list
+    const $list = $(this).closest('.sidebar_list');
+    // Remove active only in that list
+    $list.find('.sidebar_item').removeClass('is_active');
+    // Add active to the item just clicked
+    $(this).addClass('is_active');
+  });
+});

@@ -1,0 +1,63 @@
+.btn_layout_wrap {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border: 1px solid #e8ecef;
+  box-sizing: border-box;
+}
+
+.btn_layout {
+  width: 45px;
+  height: 100%;
+
+  &:not(:last-child) {
+    border-right: 1px solid #e8ecef;
+  }
+
+  &:last-child {
+    width: 44px;
+  }
+
+  .icon {
+    background-image: url(../../images/shop_page/sp_layout_icons.png);
+    background-size: 151px 26px;
+
+    &_grid_large {
+      background-position: -1px -1px;
+    }
+
+    &_grid_medium {
+      background-position: -51px -1px;
+    }
+
+    &_grid_vertical {
+      background-position: -101px -1px;
+    }
+
+    &.icon_grid_horizontal {
+      background-position: -101px -1px;
+      rotate: 90deg;
+    }
+  }
+
+  &.is_active {
+    .icon {
+      &_grid_large {
+        background-position: -26px -1px;
+      }
+
+      &_grid_medium {
+        background-position: -76px -1px;
+      }
+
+      &_grid_vertical {
+        background-position: -126px -1px;
+      }
+
+      &.icon_grid_horizontal {
+        background-position: -126px -1px;
+        rotate: 90deg;
+      }
+    }
+  }
+}

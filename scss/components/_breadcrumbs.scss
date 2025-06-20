@@ -12,8 +12,11 @@
 
   &_item {
     position: relative;
-    padding-right: 16px;
     font-size: 0;
+
+    &:not(.is_active) {
+      padding-right: 16px;
+    }
   }
 
   &_item + &_item {

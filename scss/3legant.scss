@@ -16,6 +16,8 @@
 @use './components/order_summary';
 @use './components/breadcrumbs';
 @use './components/reactions';
+@use './components/section_header';
+@use './components/btn_layout';
 
 // Layout
 @use './layout/header';
@@ -24,3 +26,4 @@
 // Pages
 @use './pages/home';
 @use './pages/product';
+@use './pages/shop';
