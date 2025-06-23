@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css">
   </head>
   <body>
-    <div class="shop_page_01">
+    <div class="shop_page">
       @@include("notification.html") @@include("header.html")
       <main class="main">
         <div class="shop_wrap">
@@ -79,23 +79,80 @@
               <div class="shop_box">
                 <div class="shop_toolbar">
                   <h3 class="heading">Living Room</h3>
-                  <button class="btn_sort">
-                    Sort by
-                    <span class="icon icon_arrow_down"></span>
-                  </button>
-                  <div class="btn_layout_wrap">
-                    <button type="button" class="btn_layout is_active" aria-label="Layout">
-                      <span class="icon icon_grid_large"></span>
+                  <div class="select">
+                    <h3 class="select_label">CATEGORIES</h3>
+                    <button type="button" aria-label="Select" class="btn_option">Living Room</button>
+                    <div class="select_option">
+                      <ul class="select_list">
+                        <li class="select_item">
+                          <a href="#none" class="select_link">All Rooms</a>
+                        </li>
+                        <li class="select_item is_active">
+                          <a href="#none" class="select_link">Living Room</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">Bedroom</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">Kitchen</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">Bathroom</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">Dinning</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">Outdoor</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="select">
+                    <h3 class="select_label">PRICE</h3>
+                    <button type="button" aria-label="Select" class="btn_option">All Price</button>
+                    <div class="select_option">
+                      <ul class="select_list">
+                        <li class="select_item">
+                          <a href="#none" class="select_link">All Price</a>
+                        </li>
+                        <li class="select_item is_active">
+                          <a href="#none" class="select_link">$0.00 - 99.99</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">$100.00 - 199.99</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">$200.00 - 299.99</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">$300.00 - 399.99</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">$400.00+</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="shop_toolbar_box">
+                    <button class="btn_sort">
+                      Sort by
+                      <span class="icon icon_arrow_down"></span>
                     </button>
-                    <button type="button" class="btn_layout" aria-label="Layout">
-                      <span class="icon icon_grid_medium"></span>
-                    </button>
-                    <button type="button" class="btn_layout" aria-label="Layout">
-                      <span class="icon icon_grid_vertical"></span>
-                    </button>
-                    <button type="button" class="btn_layout" aria-label="Layout">
-                      <span class="icon icon_grid_horizontal"></span>
-                    </button>
+                    <div class="btn_layout_wrap">
+                      <button type="button" class="btn_layout is_active" aria-label="Layout">
+                        <span class="icon icon_grid_large"></span>
+                      </button>
+                      <button type="button" class="btn_layout" aria-label="Layout">
+                        <span class="icon icon_grid_medium"></span>
+                      </button>
+                      <button type="button" class="btn_layout" aria-label="Layout">
+                        <span class="icon icon_grid_vertical"></span>
+                      </button>
+                      <button type="button" class="btn_layout" aria-label="Layout">
+                        <span class="icon icon_grid_horizontal"></span>
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div class="product_card_area">
@@ -108,18 +165,21 @@
                         <span class="badge">NEW</span>
                         <span class="badge badge_sale">-50%</span>
                       </div>
+                    </div>
+                    <div class="product_card_content">
+                      <div class="rating">
+                        <span class="star" style="width: 100%"></span>
+                      </div>
+                      <h3><a href="#none" class="title">Loveseat Sofa</a></h3>
+                      <div class="price_box">
+                        <span class="price">$199.00</span>
+                        <span class="price price_origin">$400.00</span>
+                      </div>
+                      <p class="desc">Like small jewels in shiny brass and gray clear glass, pread a soft mood light that creates exciting shadows on walls and ceilings</p>
+                      <a href="#none" class="btn btn_add">Add to cart</a>
                       <button type="button" class="btn_favorite" aria-label="Favorite">
                         <span class="icon icon_like"></span>
                       </button>
-                      <a href="#none" class="btn btn_add">Add to cart</a>
-                    </div>
-                    <div class="rating">
-                      <span class="star" style="width: 100%"></span>
-                    </div>
-                    <h3><a href="#none" class="title">Loveseat Sofa</a></h3>
-                    <div class="price_box">
-                      <span class="price">$199.00</span>
-                      <span class="price price_origin">$400.00</span>
                     </div>
                   </div>
                   <div class="product_card_item">
@@ -131,18 +191,21 @@
                         <span class="badge">NEW</span>
                         <span class="badge badge_sale">-50%</span>
                       </div>
+                    </div>
+                    <div class="product_card_content">
+                      <div class="rating">
+                        <span class="star" style="width: 100%"></span>
+                      </div>
+                      <h3><a href="#none" class="title">Luxury Sofa</a></h3>
+                      <div class="price_box">
+                        <span class="price">$299.00</span>
+                        <span class="price price_origin">$500.00</span>
+                      </div>
+                      <p class="desc">Like small jewels in shiny brass and gray clear glass, pread a soft mood light that creates exciting shadows on walls and ceilings</p>
+                      <a href="#none" class="btn btn_add">Add to cart</a>
                       <button type="button" class="btn_favorite" aria-label="Favorite">
                         <span class="icon icon_like"></span>
                       </button>
-                      <a href="#none" class="btn btn_add">Add to cart</a>
-                    </div>
-                    <div class="rating">
-                      <span class="star" style="width: 100%"></span>
-                    </div>
-                    <h3><a href="#none" class="title">Luxury Sofa</a></h3>
-                    <div class="price_box">
-                      <span class="price">$299.00</span>
-                      <span class="price price_origin">$500.00</span>
                     </div>
                   </div>
                   <div class="product_card_item">
@@ -154,17 +217,20 @@
                         <span class="badge">NEW</span>
                         <span class="badge badge_sale">-50%</span>
                       </div>
+                    </div>
+                    <div class="product_card_content">
+                      <div class="rating">
+                        <span class="star" style="width: 100%"></span>
+                      </div>
+                      <h3><a href="#none" class="title">Table Lamp</a></h3>
+                      <div class="price_box">
+                        <span class="price">$19.00</span>
+                      </div>
+                      <p class="desc">Like small jewels in shiny brass and gray clear glass, pread a soft mood light that creates exciting shadows on walls and ceilings</p>
+                      <a href="#none" class="btn btn_add">Add to cart</a>
                       <button type="button" class="btn_favorite" aria-label="Favorite">
                         <span class="icon icon_like"></span>
                       </button>
-                      <a href="#none" class="btn btn_add">Add to cart</a>
-                    </div>
-                    <div class="rating">
-                      <span class="star" style="width: 100%"></span>
-                    </div>
-                    <h3><a href="#none" class="title">Table Lamp</a></h3>
-                    <div class="price_box">
-                      <span class="price">$19.00</span>
                     </div>
                   </div>
                   <div class="product_card_item">
@@ -176,17 +242,20 @@
                         <span class="badge">NEW</span>
                         <span class="badge badge_sale">-50%</span>
                       </div>
+                    </div>
+                    <div class="product_card_content">
+                      <div class="rating">
+                        <span class="star" style="width: 100%"></span>
+                      </div>
+                      <h3><a href="#none" class="title">White Drawer unit</a></h3>
+                      <div class="price_box">
+                        <span class="price">$89.99</span>
+                      </div>
+                      <p class="desc">Like small jewels in shiny brass and gray clear glass, pread a soft mood light that creates exciting shadows on walls and ceilings</p>
+                      <a href="#none" class="btn btn_add">Add to cart</a>
                       <button type="button" class="btn_favorite" aria-label="Favorite">
                         <span class="icon icon_like"></span>
                       </button>
-                      <a href="#none" class="btn btn_add">Add to cart</a>
-                    </div>
-                    <div class="rating">
-                      <span class="star" style="width: 100%"></span>
-                    </div>
-                    <h3><a href="#none" class="title">White Drawer unit</a></h3>
-                    <div class="price_box">
-                      <span class="price">$89.99</span>
                     </div>
                   </div>
                   <div class="product_card_item">
@@ -198,17 +267,20 @@
                         <span class="badge">NEW</span>
                         <span class="badge badge_sale">-50%</span>
                       </div>
+                    </div>
+                    <div class="product_card_content">
+                      <div class="rating">
+                        <span class="star" style="width: 100%"></span>
+                      </div>
+                      <h3><a href="#none" class="title">Black Tray table</a></h3>
+                      <div class="price_box">
+                        <span class="price">$19.99</span>
+                      </div>
+                      <p class="desc">Like small jewels in shiny brass and gray clear glass, pread a soft mood light that creates exciting shadows on walls and ceilings</p>
+                      <a href="#none" class="btn btn_add">Add to cart</a>
                       <button type="button" class="btn_favorite" aria-label="Favorite">
                         <span class="icon icon_like"></span>
                       </button>
-                      <a href="#none" class="btn btn_add">Add to cart</a>
-                    </div>
-                    <div class="rating">
-                      <span class="star" style="width: 100%"></span>
-                    </div>
-                    <h3><a href="#none" class="title">Black Tray table</a></h3>
-                    <div class="price_box">
-                      <span class="price">$19.99</span>
                     </div>
                   </div>
                   <div class="product_card_item">
@@ -220,17 +292,20 @@
                         <span class="badge">NEW</span>
                         <span class="badge badge_sale">-50%</span>
                       </div>
+                    </div>
+                    <div class="product_card_content">
+                      <div class="rating">
+                        <span class="star" style="width: 100%"></span>
+                      </div>
+                      <h3><a href="#none" class="title">Lamp</a></h3>
+                      <div class="price_box">
+                        <span class="price">$39.00</span>
+                      </div>
+                      <p class="desc">Like small jewels in shiny brass and gray clear glass, pread a soft mood light that creates exciting shadows on walls and ceilings</p>
+                      <a href="#none" class="btn btn_add">Add to cart</a>
                       <button type="button" class="btn_favorite" aria-label="Favorite">
                         <span class="icon icon_like"></span>
                       </button>
-                      <a href="#none" class="btn btn_add">Add to cart</a>
-                    </div>
-                    <div class="rating">
-                      <span class="star" style="width: 100%"></span>
-                    </div>
-                    <h3><a href="#none" class="title">Lamp</a></h3>
-                    <div class="price_box">
-                      <span class="price">$39.00</span>
                     </div>
                   </div>
                   <div class="product_card_item">
@@ -242,17 +317,20 @@
                         <span class="badge">NEW</span>
                         <span class="badge badge_sale">-50%</span>
                       </div>
+                    </div>
+                    <div class="product_card_content">
+                      <div class="rating">
+                        <span class="star" style="width: 100%"></span>
+                      </div>
+                      <h3><a href="#none" class="title">Light Beige Pillow</a></h3>
+                      <div class="price_box">
+                        <span class="price">$3.99</span>
+                      </div>
+                      <p class="desc">Like small jewels in shiny brass and gray clear glass, pread a soft mood light that creates exciting shadows on walls and ceilings</p>
+                      <a href="#none" class="btn btn_add">Add to cart</a>
                       <button type="button" class="btn_favorite" aria-label="Favorite">
                         <span class="icon icon_like"></span>
                       </button>
-                      <a href="#none" class="btn btn_add">Add to cart</a>
-                    </div>
-                    <div class="rating">
-                      <span class="star" style="width: 100%"></span>
-                    </div>
-                    <h3><a href="#none" class="title">Light Beige Pillow</a></h3>
-                    <div class="price_box">
-                      <span class="price">$3.99</span>
                     </div>
                   </div>
                   <div class="product_card_item">
@@ -264,17 +342,20 @@
                         <span class="badge">NEW</span>
                         <span class="badge badge_sale">-50%</span>
                       </div>
+                    </div>
+                    <div class="product_card_content">
+                      <div class="rating">
+                        <span class="star" style="width: 100%"></span>
+                      </div>
+                      <h3><a href="#none" class="title">Table Lamp</a></h3>
+                      <div class="price_box">
+                        <span class="price">$39.99</span>
+                      </div>
+                      <p class="desc">Like small jewels in shiny brass and gray clear glass, pread a soft mood light that creates exciting shadows on walls and ceilings</p>
+                      <a href="#none" class="btn btn_add">Add to cart</a>
                       <button type="button" class="btn_favorite" aria-label="Favorite">
                         <span class="icon icon_like"></span>
                       </button>
-                      <a href="#none" class="btn btn_add">Add to cart</a>
-                    </div>
-                    <div class="rating">
-                      <span class="star" style="width: 100%"></span>
-                    </div>
-                    <h3><a href="#none" class="title">Table Lamp</a></h3>
-                    <div class="price_box">
-                      <span class="price">$39.99</span>
                     </div>
                   </div>
                   <div class="product_card_item">
@@ -286,17 +367,20 @@
                         <span class="badge">NEW</span>
                         <span class="badge badge_sale">-50%</span>
                       </div>
+                    </div>
+                    <div class="product_card_content">
+                      <div class="rating">
+                        <span class="star" style="width: 100%"></span>
+                      </div>
+                      <h3><a href="#none" class="title">Bamboo Basket</a></h3>
+                      <div class="price_box">
+                        <span class="price">$9.99</span>
+                      </div>
+                      <p class="desc">Like small jewels in shiny brass and gray clear glass, pread a soft mood light that creates exciting shadows on walls and ceilings</p>
+                      <a href="#none" class="btn btn_add">Add to cart</a>
                       <button type="button" class="btn_favorite" aria-label="Favorite">
                         <span class="icon icon_like"></span>
                       </button>
-                      <a href="#none" class="btn btn_add">Add to cart</a>
-                    </div>
-                    <div class="rating">
-                      <span class="star" style="width: 100%"></span>
-                    </div>
-                    <h3><a href="#none" class="title">Bamboo Basket</a></h3>
-                    <div class="price_box">
-                      <span class="price">$9.99</span>
                     </div>
                   </div>
                 </div>
@@ -325,7 +409,7 @@
               <span class="icon icon_close"></span>
             </button>
             <figure class="cart_img_wrap">
-              <img src="../images/product_card/img_product7.png" alt="Tray Table" class="cart_img">
+              <img src="../images/img_product7.png" alt="Tray Table" class="cart_img">
             </figure>
             <div class="cart_info">
               <div class="row">
@@ -349,7 +433,7 @@
               <span class="icon icon_close"></span>
             </button>
             <figure class="cart_img_wrap">
-              <img src="../images/product_card/img_product7.png" alt="Tray Table" class="cart_img" style="filter: hue-rotate(0deg)">
+              <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" style="filter: hue-rotate(0deg)">
             </figure>
             <div class="cart_info">
               <div class="row">

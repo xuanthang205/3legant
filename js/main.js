@@ -289,45 +289,52 @@ $(document).on('click', '.btn_minus', function () {
 });
 
 // Select
-$(document).ready(function () {
-  const $select = $('.select');
-  const $optionBtn = $select.find('.btn_option');
-  const $options = $select.find('.select_option');
-  const $selectItems = $select.find('.select_item');
-  const $activeItem = $select.find('.select_item.is_active');
+$(function () {
+  // Initialize each custom select block independently
+  $('.select').each(function () {
+    const $select = $(this);
+    const $btn = $select.find('.btn_option'); // The button that shows the selected value
+    const $menu = $select.find('.select_option'); // The dropdown list container
+    const $items = $select.find('.select_item'); // All selectable items
 
-  if ($activeItem.length) {
-    const text = $activeItem.find('.select_link').text();
-    $optionBtn.text(text);
-  }
-
-  $optionBtn.on('click', function () {
-    $optionBtn.toggleClass('is_show');
-    $options.toggleClass('is_show');
-  });
-
-  $(document).on('click', function (e) {
-    if (!$(e.target).closest('.select').length) {
-      $optionBtn.removeClass('is_show');
-      $options.removeClass('is_show');
+    // If there's an item marked active in HTML, set its text on the button
+    const $active = $select.find('.select_item.is_active');
+    if ($active.length) {
+      $btn.text($active.find('.select_link').text());
     }
+
+    // Toggle dropdown visibility when clicking the button
+    $btn.on('click', function (e) {
+      e.stopPropagation(); // Prevent click from bubbling up to document
+      $btn.toggleClass('is_show'); // Toggle button open state
+      $menu.toggleClass('is_show'); // Toggle dropdown open state
+    });
+
+    // Handle clicking on an item in the dropdown
+    $items.on('click', function (e) {
+      e.preventDefault(); // Prevent link navigation
+      const $this = $(this);
+
+      // Remove existing active state and mark this item active
+      $select.find('.select_item.is_active').removeClass('is_active');
+      $this.addClass('is_active');
+
+      // Update button text to match selected item and close dropdown
+      $btn.text($this.find('.select_link').text());
+      $btn.removeClass('is_show');
+      $menu.removeClass('is_show');
+    });
   });
 
-  $selectItems.on('click', function () {
-    const text = $(this).find('.select_link').text();
-
-    $select.find('.select_item.is_active').removeClass('is_active');
-    $(this).addClass('is_active');
-
-    $optionBtn.text(text);
-    $optionBtn.removeClass('is_show');
-    $options.removeClass('is_show');
+  // Clicking anywhere outside a select will close all dropdowns
+  $(document).on('click', function () {
+    $('.btn_option, .select_option').removeClass('is_show');
   });
 
+  // Close dropdowns when resizing wider than mobile breakpoint
   $(window).on('resize', function () {
-    if (window.innerWidth > 768) {
-      $optionBtn.removeClass('is_show');
-      $options.removeClass('is_show');
+    if ($(window).width() > 768) {
+      $('.btn_option, .select_option').removeClass('is_show');
     }
   });
 });
@@ -427,7 +434,7 @@ $(document).ready(function () {
 // Change tab
 $(document).ready(function () {
   const $menuItems = $('.tabs .menu .menu_item'); // PC tab
-  const $tabContents = $('.tab_content_wrap'); 
+  const $tabContents = $('.tab_content_wrap');
   const $tabHeaders = $('.tab_content_wrap .menu_item'); // Mobile tab
 
   let wasMobile = window.innerWidth <= 768;
@@ -574,14 +581,85 @@ $(document).ready(function () {
 });
 // Load comment
 
-// Shop sidebar 
-$(function(){
-  $('.sidebar_list').on('click', '.sidebar_item', function(){
+// Shop sidebar
+$(function () {
+  $('.sidebar_list').on('click', '.sidebar_item', function () {
     // Get the correct parent list
     const $list = $(this).closest('.sidebar_list');
     // Remove active only in that list
     $list.find('.sidebar_item').removeClass('is_active');
     // Add active to the item just clicked
     $(this).addClass('is_active');
+  });
+});
+// Shop sidebar
+
+// Shop change layout
+$(function () {
+  const $prodArea = $('.product_card_area');
+  const BREAKPOINT = 768;
+
+  $('.btn_layout_wrap').each(function () {
+    const $wrap = $(this);
+    const $buttons = $wrap.find('.btn_layout');
+    const $shop = $wrap.closest('.shop_area');
+    const isToolbar = $buttons.length === 4;
+    // save initial index and will be updated every time the mouse is clicked on the screen
+    const initialIdx = $buttons.index($buttons.filter('.is_active'));
+    let currentIdx = initialIdx;
+
+    // Update only product_area
+    function updateProduct(idx) {
+      const cls = isToolbar ? ['', 'is_large', 'is_vertical', 'is_horizontal'][idx] : ['is_vertical', 'is_horizontal'][idx];
+      $prodArea.removeClass('is_large is_vertical is_horizontal').toggleClass(cls, !!cls);
+    }
+
+    // When clicked on desktop: active + update shop_area + product_area
+    function applyClick($btn) {
+      const idx = $buttons.index($btn);
+      currentIdx = idx;
+
+      $buttons.removeClass('is_active');
+      $btn.addClass('is_active');
+
+      updateProduct(idx);
+
+      if (isToolbar) {
+        if (idx === 0) $shop.removeClass('is_change');
+        else $shop.addClass('is_change');
+      }
+    }
+
+    // When switching to mobile: map from currentIdx → mobileIdx
+    function applyMobile() {
+      const mobileIdx = isToolbar ? (currentIdx < 2 ? 2 : currentIdx) : 0; // sidebar always maps to idx0 (vertical)
+
+      $buttons.removeClass('is_active').eq(mobileIdx).addClass('is_active');
+      updateProduct(mobileIdx);
+      // Do not touch shop_area.is_change here
+    }
+
+    // Initialize with available HTML
+    if (initialIdx >= 0) {
+      applyClick($buttons.eq(initialIdx));
+    }
+
+    // Handle clicks
+    $buttons.on('click', function (e) {
+      e.preventDefault();
+      applyClick($(this));
+    });
+
+    // Change mode when crossing breakpoint
+    let mode = $(window).width() < BREAKPOINT ? 'mobile' : 'desktop';
+    if (mode === 'mobile') applyMobile();
+
+    $(window).on('resize', function () {
+      const newMode = $(this).width() < BREAKPOINT ? 'mobile' : 'desktop';
+      if (newMode === mode) return;
+      mode = newMode;
+      if (mode === 'mobile') applyMobile();
+      else applyClick($buttons.eq(currentIdx));
+    });
   });
 });
