@@ -203,7 +203,7 @@ closePopup($dimmed, $closePopupBtn);
 
 $cartItem.each(function () {
   const $item = $(this);
-  const $btnDeleteCart = $item.find('.btn_close');
+  const $btnDeleteCart = $item.find('.btn_remove');
 
   $btnDeleteCart.on('click', () => {
     $item.css('display', 'none');

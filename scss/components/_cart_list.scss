@@ -14,9 +14,11 @@
       margin-top: 16px;
     }
 
-    .btn_close {
+    .btn_remove {
+      position: absolute;
       top: 46px;
       right: -8px;
+      padding: 8px;
     }
   }
 

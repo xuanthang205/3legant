@@ -204,6 +204,11 @@ a {
   &_filter {
     background-position: -151px -51px;
   }
+
+  &.icon_arrow_back{
+    background-position: -226px -1px;
+    rotate: 90deg;
+  }
 }
 // //Icon
 
@@ -374,9 +379,11 @@ a {
     line-height: 20px;
   }
 
-  .btn_minus,
-  .btn_plus {
+  .btn_minus {
     padding: 3px 0 3px 3px;
+  }
+  .btn_plus {
+    padding: 3px 3px 3px 0;
   }
 }
 
@@ -552,6 +559,16 @@ a {
       color: #141718;
     }
   }
+}
+
+.btn_back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #605f5f;
+  line-height: 24px;
 }
 
 .pc_hide {

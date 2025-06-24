@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>3legant. : Home Page 01</title>
+    <link rel="stylesheet" type="text/css" href="./css/library/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="shopping_wrap">
+      <div class="notification">
+  <span class="icon icon_ticket_percent">
+    <span class="blind">Ticket percent</span>
+  </span>
+  <p class="text">30% off storewide — Limited time!</p>
+  <a href="#none" class="more_link">
+    Shop Now
+    <span class="icon icon_arrow_right"></span>
+  </a>
+  <button type="button" class="btn_close" aria-label="Close Notification">
+    <span class="icon icon_close"></span>
+  </button>
+</div>
+ <header class="header">
+  <div class="header_area">
+    <div class="logo_box">
+      <button type="button" class="btn_menu mobile_only" aria-label="Menu">
+        <span class="icon icon_menu"></span>
+      </button>
+      <h1 class="logo">
+        <a href="./index.html" class="logo_link">
+          <img src="../images/img_logo1.svg" class="logo_img" alt="3legant. Logo">
+        </a>
+      </h1>
+    </div>
+    <button type="button" class="pc_hide btn_close" aria-label="Close menu">
+      <span class="icon icon_close"></span> 
+    </button>
+    <div class="input_wrap pc_hide">
+      <button type="button" aria-label="Search">
+        <span class="icon icon_search"></span>
+      </button>
+      <input type="text" id="search" name="search" placeholder="Search" class="input">
+    </div>
+    <nav class="nav mobile_hide">
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="./index.html" class="nav_link">Home</a>
+        </li>
+        <li class="nav_item">
+          <a href="./01_shop_page.html" class="nav_link">Shop</a>
+        </li>
+        <li class="nav_item">
+          <a href="./01_product.html" class="nav_link">Product</a>
+        </li>
+        <li class="nav_item">
+          <a href="#none" class="nav_link">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+    <ul class="action_list">
+      <li class="action_item mobile_hide">
+        <a href="#none" class="action_link" aria-label="Search">
+          <span class="icon icon_search"></span>
+        </a>
+      </li>
+      <li class="action_item mobile_hide">
+        <a href="./signin.html" class="action_link" aria-label="User">
+          <span class="icon icon_user"></span>
+        </a>
+      </li>
+      <li id="btn_cart" class="action_item">
+        <a href="#none" class="action_link" aria-label="Cart">
+          <span class="title pc_hide">Cart</span>
+          <div class="action_link_icon">
+            <span class="icon icon_cart"></span>
+            <span class="quantity">2</span>
+          </div>
+        </a>
+      </li>
+      <li class="action_item action_item_show pc_hide">
+        <a href="#none" class="action_link" aria-label="Wishlist">
+          <span class="title">Wishlist</span>
+          <div class="action_link_icon">
+            <span class="icon icon_like"></span>
+            <span class="quantity">2</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <a href="#none" class="btn btn_signin pc_hide">Sign In</a>
+    <ul class="social_list pc_hide">
+      <li class="social_item">
+        <a href="#none" class="social_link" aria-label="Instagram">
+          <span class="icon icon_instagram"></span>
+        </a>
+      </li>
+      <li class="social_item">
+        <a href="#none" class="social_link" aria-label="Facebook">
+          <span class="icon icon_facebook"></span>
+        </a>
+      </li>
+      <li class="social_item">
+        <a href="#none" class="social_link" aria-label="Youtube">
+          <span class="icon icon_youtube"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+      <main class="main">
+        <div class="inner">
+          <a href="./01_shop_page.html" class="btn_back">
+            <span class="icon icon_arrow_back"></span>
+            back</a
+          >
+          <div class="shopping_top">
+            <h2 class="title">Cart</h2>
+            <ol class="process_list">
+              <li class="process_item is_active">Shopping cart</li>
+              <li class="process_item">Checkout details</li>
+              <li class="process_item">Order complete</li>
+            </ol>
+          </div>
+          <div class="shopping_area">
+            <div class="shopping_box">
+              <table class="table table_cart">
+                <caption class="blind">
+                  Order Cart
+                </caption>
+                <colgroup>
+                  <col style="width: 49.147%" />
+                  <col style="width: 12.44%" />
+                  <col style="width: 18.82%" />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="cart_item">
+                        <button type="button" class="btn_remove" aria-label="Delete cart">
+                          <span class="icon icon_close"></span>
+                        </button>
+                        <figure class="cart_img_wrap">
+                          <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" />
+                        </figure>
+                        <div class="cart_info">
+                          <div class="row">
+                            <span class="cart_text">Tray Table</span>
+                            <span class="cart_text">$19.19</span>
+                          </div>
+                          <p class="cart_color">Color: Black</p>
+                          <div class="btn_quantity">
+                            <button type="button" class="btn_minus" aria-label="Minus">
+                              <span class="icon icon_minus"></span>
+                            </button>
+                            <span class="quantity">2</span>
+                            <button type="button" class="btn_plus" aria-label="Plus">
+                              <span class="icon icon_plus"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn_quantity">
+                        <button type="button" class="btn_minus" aria-label="Minus">
+                          <span class="icon icon_minus"></span>
+                        </button>
+                        <span class="quantity">2</span>
+                        <button type="button" class="btn_plus" aria-label="Plus">
+                          <span class="icon icon_plus"></span>
+                        </button>
+                      </div>
+                    </td>
+                    <td>$19.00</td>
+                    <td>$38.00</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cart_item">
+                        <button type="button" class="btn_remove" aria-label="Delete cart">
+                          <span class="icon icon_close"></span>
+                        </button>
+                        <figure class="cart_img_wrap">
+                          <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" />
+                        </figure>
+                        <div class="cart_info">
+                          <div class="row">
+                            <span class="cart_text">Tray Table</span>
+                            <span class="cart_text">$19.19</span>
+                          </div>
+                          <p class="cart_color">Color: Black</p>
+                          <div class="btn_quantity">
+                            <button type="button" class="btn_minus" aria-label="Minus">
+                              <span class="icon icon_minus"></span>
+                            </button>
+                            <span class="quantity">2</span>
+                            <button type="button" class="btn_plus" aria-label="Plus">
+                              <span class="icon icon_plus"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn_quantity">
+                        <button type="button" class="btn_minus" aria-label="Minus">
+                          <span class="icon icon_minus"></span>
+                        </button>
+                        <span class="quantity">2</span>
+                        <button type="button" class="btn_plus" aria-label="Plus">
+                          <span class="icon icon_plus"></span>
+                        </button>
+                      </div>
+                    </td>
+                    <td>$19.00</td>
+                    <td>$38.00</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cart_item">
+                        <button type="button" class="btn_remove" aria-label="Delete cart">
+                          <span class="icon icon_close"></span>
+                        </button>
+                        <figure class="cart_img_wrap">
+                          <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" />
+                        </figure>
+                        <div class="cart_info">
+                          <div class="row">
+                            <span class="cart_text">Tray Table</span>
+                            <span class="cart_text">$19.19</span>
+                          </div>
+                          <p class="cart_color">Color: Black</p>
+                          <div class="btn_quantity">
+                            <button type="button" class="btn_minus" aria-label="Minus">
+                              <span class="icon icon_minus"></span>
+                            </button>
+                            <span class="quantity">2</span>
+                            <button type="button" class="btn_plus" aria-label="Plus">
+                              <span class="icon icon_plus"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="btn_quantity">
+                        <button type="button" class="btn_minus" aria-label="Minus">
+                          <span class="icon icon_minus"></span>
+                        </button>
+                        <span class="quantity">2</span>
+                        <button type="button" class="btn_plus" aria-label="Plus">
+                          <span class="icon icon_plus"></span>
+                        </button>
+                      </div>
+                    </td>
+                    <td>$39.00</td>
+                    <td>$39.00</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="coupon">
+                <h4 class="title">Have a coupon?</h4>
+                <p class="desc">Add your code for an instant cart discount</p>
+                <form action="#none" class="form">
+                  <span class="icon icon_ticket_percent"></span>
+                  <input type="text" name="input_coupon" placeholder="Coupon Code" class="input" />
+                  <button type="submit" class="btn_apply">Apply</button>
+                </form>
+              </div>
+            </div>
+            <div class="cart_summary">
+              <h4 class="title">Cart summary</h4>
+              <ul class="cart_summary_list">
+                <li class="cart_summary_item is_active">
+                  Free shipping
+                  <span class="price">$0.00</span>
+                </li>
+                <li class="cart_summary_item">
+                  Express shipping
+                  <span class="price">+$15.00</span>
+                </li>
+                <li class="cart_summary_item">
+                  Pick Up
+                  <span class="price">%21.00</span>
+                </li>
+              </ul>
+              <div class="row">
+                <span class="label">Subtotal</span>
+                <span class="price">$1234.00</span>
+              </div>
+              <div class="row">
+                <span class="label">Total</span>
+                <span class="price">$1345.00</span>
+              </div>
+              <a href="#none" class="btn btn_checkout">Checkout</a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+  <div class="inner">
+    <div class="footer_wrap">
+      <h2 class="logo">
+        <a href="#" class="logo_link">
+          <img src="../images/img_logo2.svg" alt="3legant. Logo" class="logo_img">
+        </a>
+      </h2>
+      <p class="desc">Gift & Decoration Store</p>
+      <nav class="nav">
+        <ul class="nav_list">
+          <li class="nav_item"><a href="#" class="nav_link">Home</a></li>
+          <li class="nav_item"><a href="#none" class="nav_link">Shop</a></li>
+          <li class="nav_item"><a href="#none" class="nav_link">Product</a></li>
+          <li class="nav_item"><a href="#none" class="nav_link">Blog</a></li>
+          <li class="nav_item"><a href="#none" class="nav_link">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="copyright_wrap">
+      <p class="copyright">Copyright © 2023 3legant. All rights reserved</p>
+      <ul class="legal_list">
+        <li class="legal_item">
+          <a href="#none" class="legal_link">Privacy Policy</a>
+        </li>
+        <li class="legal_item">
+          <a href="#none" class="legal_link legal_terms">Terms of Use</a>
+        </li>
+      </ul>
+      <ul class="social_list">
+        <li class="social_item">
+          <a href="#none" class="social_link" aria-label="Instagram">
+            <span class="icon icon_instagram2"></span>
+          </a>
+        </li>
+        <li class="social_item">
+          <a href="#none" class="social_link" aria-label="Facebook">
+            <span class="icon icon_facebook2"></span>
+          </a>
+        </li>
+        <li class="social_item">
+          <a href="#none" class="social_link" aria-label="Youtube">
+            <span class="icon icon_youtube2"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <!-- Dimmed -->
+    <div class="dimmed"></div>
+    <!-- Dimmed -->
+    <!-- Popup -->
+    <div class="popup_wrap">
+      <button type="button" class="btn_close mobile_only" aria-label="Close Popup">
+        <span class="icon icon_close"></span>
+      </button>
+      <h3 class="popup_title">Cart</h3>
+      <div class="popup_box">
+        <ul class="cart_list">
+          <li class="cart_item">
+            <button type="button" class="btn_remove" aria-label="Delete cart">
+              <span class="icon icon_close"></span>
+            </button>
+            <figure class="cart_img_wrap">
+              <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" />
+            </figure>
+            <div class="cart_info">
+              <div class="row">
+                <span class="cart_text">Tray Table</span>
+                <span class="cart_text">$19.19</span>
+              </div>
+              <p class="cart_color">Color: Black</p>
+              <div class="btn_quantity">
+                <button type="button" class="btn_minus" aria-label="Minus">
+                  <span class="icon icon_minus"></span>
+                </button>
+                <span class="quantity">2</span>
+                <button type="button" class="btn_plus" aria-label="Plus">
+                  <span class="icon icon_plus"></span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="cart_item">
+            <button type="button" class="btn_remove" aria-label="Delete cart">
+              <span class="icon icon_close"></span>
+            </button>
+            <figure class="cart_img_wrap">
+              <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" style="filter: hue-rotate(0deg)" />
+            </figure>
+            <div class="cart_info">
+              <div class="row">
+                <span class="cart_text">Tray Table</span>
+                <span class="cart_text">$19.19</span>
+              </div>
+              <p class="cart_color">Color: Red</p>
+              <div class="btn_quantity">
+                <button type="button" class="btn_minus" aria-label="Minus">
+                  <span class="icon icon_minus"></span>
+                </button>
+                <span class="quantity">2</span>
+                <button type="button" class="btn_plus" aria-label="Plus">
+                  <span class="icon icon_plus"></span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="cart_item">
+            <button type="button" class="btn_remove" aria-label="Delete cart">
+              <span class="icon icon_close"></span>
+            </button>
+            <figure class="cart_img_wrap">
+              <img src="../images/product_card/img_product2.png" alt="Table lamp" class="cart_img" />
+            </figure>
+            <div class="cart_info">
+              <div class="row">
+                <span class="cart_text">Table lamp</span>
+                <span class="cart_text">$39.00</span>
+              </div>
+              <p class="cart_color">Color: Gold</p>
+              <div class="btn_quantity">
+                <button type="button" class="btn_minus" aria-label="Minus">
+                  <span class="icon icon_minus"></span>
+                </button>
+                <span class="quantity">2</span>
+                <button type="button" class="btn_plus" aria-label="Plus">
+                  <span class="icon icon_plus"></span>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="order_summary">
+          <div class="row">
+            <span class="title">Subtotal</span>
+            <span class="price">$99.00</span>
+          </div>
+          <div class="row">
+            <span class="title">Total</span>
+            <span class="price">$234.00</span>
+          </div>
+          <a href="./shopping.html" class="btn btn_checkout">Checkout</a>
+        </div>
+        <a href="#none" class="popup_link">View Cart</a>
+      </div>
+    </div>
+    <!-- popup -->
+    <script src="../js/vendors/jquery/jquery.min.js"></script>
+    <script src="../js/vendors/swiper/swiper.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
