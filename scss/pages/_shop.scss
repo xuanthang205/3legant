@@ -355,6 +355,19 @@
   }
 }
 
+@media (max-width: 992px){
+  .shop_area.is_change{
+    .shop_toolbar{
+      flex-wrap: wrap;
+      gap: 24px;
+
+        &_box{
+          margin-left: 0;
+        }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .shop_area {
     flex-direction: column;

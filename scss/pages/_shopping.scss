@@ -16,7 +16,7 @@
   }
 
   &_wrap {
-    .main{
+    .main {
       overflow-x: hidden;
     }
     .btn_back {
@@ -84,6 +84,20 @@
     .table_cart {
       width: 100%;
       border-collapse: collapse;
+
+      col {
+        &:first-child {
+          width: 49.147%;
+        }
+
+        &:nth-child(2) {
+          width: 12.44%;
+        }
+        &:nth-child(3) {
+          width: 18.82%;
+        }
+      }
+
       th {
         padding: 0 0 23px 0;
         border-bottom: 1px solid $text-secondary-color;
@@ -229,7 +243,7 @@
       align-self: flex-start;
       padding: 23px;
       border: 1px solid $text-secondary-color;
-      border-radius: 4px;
+      border-radius: 6px;
       box-sizing: border-box;
 
       &_list {
@@ -239,8 +253,9 @@
       &_item {
         display: flex;
         align-items: center;
+        height: 52px;
         margin-top: 12px;
-        padding: 12px 16px;
+        padding: 0 16px;
         border: 1px solid $text-secondary-color;
         border-radius: 4px;
         font-size: 16px;
@@ -291,10 +306,12 @@
         position: relative;
         padding: 13px 0;
         font-size: 16px;
+        color: $text-primary-color;
         line-height: 26px;
 
         .price {
           font-size: 16px;
+          color: $text-primary-color;
           line-height: 26px;
         }
 
@@ -309,6 +326,7 @@
         }
 
         &:last-of-type {
+          padding-bottom: 7px;
           font-weight: 600;
           font-size: 20px;
           line-height: 32px;
@@ -323,7 +341,7 @@
       .btn_checkout {
         --height: 52px;
         width: 100%;
-        margin-top: 27px;
+        margin-top: 32px;
         font-size: 18px;
       }
     }
@@ -331,5 +349,160 @@
 
   &_box {
     width: 57.412%;
+  }
+}
+
+@media (max-width: 768px) {
+  .shopping {
+    &_wrap {
+      .main .inner {
+        padding: 16px 0 80px;
+      }
+      .btn_back {
+        display: inline-flex;
+      }
+
+      .process_list {
+        margin-top: 24px;
+      }
+    }
+
+    &_top {
+      .title {
+        margin-top: 36px;
+        font-size: 40px;
+        letter-spacing: -0.4px;
+        line-height: 44px;
+      }
+    }
+
+    &_area {
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 40px;
+
+      .title {
+        font-family: $inter;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      .table_cart {
+        col:first-child {
+          width: 100%;
+        }
+
+        th:not(:first-child),
+        td:not(:first-child) {
+          display: none;
+        }
+
+        tr:not(:first-child) {
+          .cart_item {
+            margin-top: 24px;
+          }
+        }
+
+        .cart_item {
+          padding-right: 16px;
+          .btn_quantity {
+            display: flex;
+            margin-top: 8px;
+          }
+
+          .btn_remove {
+            gap: 0;
+            top: 46px;
+            right: 9px;
+            left: auto;
+
+            &::after {
+              content: '';
+            }
+          }
+
+          .row {
+            margin-top: 0;
+            .cart_text:nth-child(2) {
+              display: block;
+            }
+          }
+        }
+      }
+
+      .cart_summary {
+        width: 100%;
+        padding: 15px;
+
+        &_item {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 22px;
+
+          .price {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 22px;
+          }
+        }
+
+        .row {
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 22px;
+
+          &:first-of-type{
+            .price{
+              padding-bottom: 4px;
+            }
+          }
+
+          &:last-of-type {
+            padding-bottom: 13px;
+            font-size: 16px;
+            line-height: 26px;
+
+            .price {
+              font-size: 16px;
+              line-height: 26px;
+            }
+          }
+
+          .price {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 22px;
+          }
+        }
+
+        .btn_checkout{
+          margin-top: 24px;
+        }
+      }
+
+      .coupon {
+        max-width: 100%;
+        margin-top: 24px;
+
+        .desc {
+          font-size: 14px;
+          line-height: 22px;
+        }
+
+        .icon {
+          flex-shrink: 0;
+        }
+
+        .input {
+          min-width: 0;
+        }
+      }
+    }
+
+    &_box,
+    .cart_summary {
+      width: 100%;
+    }
   }
 }
