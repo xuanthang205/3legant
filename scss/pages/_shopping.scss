@@ -32,6 +32,54 @@
       }
 
       &_item {
+        &:first-child .process_link::before {
+          content: '1';
+        }
+
+        &:nth-child(2) .process_link::before {
+          content: '2';
+        }
+
+        &:nth-child(3) .process_link::before {
+          content: '3';
+        }
+
+        &.is_active .process_link{
+          color: #23262f;
+          border-bottom: 2px solid $text-primary-color;
+          &::before {
+            background-color: #23262f;
+          }
+        }
+
+        &.is_completed .process_link{
+          position: relative;
+          color: $green-color;
+          border-bottom: 2px solid $green-color;
+          &::before {
+            background-color: $green-color;
+            content: '';
+          }
+
+          &::after {
+            overflow: hidden;
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 24px;
+            height: 24px;
+            background-image: url(../../images/sp_icons.png);
+            background-repeat: no-repeat;
+            background-size: 276px 76px;
+            background-position: -176px -51px;
+            vertical-align: top;
+            box-sizing: border-box;
+            content: '';
+          }
+        }
+      }
+
+      &_link{
         display: flex;
         align-items: center;
         flex-shrink: 0;
@@ -45,7 +93,7 @@
         white-space: nowrap;
 
         &::before {
-          @include mixins.flex-center(42px, circle);
+          @include mixins.flex-center(40px, circle);
           flex-shrink: 0;
           font-weight: 600;
           font-size: 16px;
@@ -53,29 +101,10 @@
           line-height: 24px;
           background-color: #b1b5c3;
         }
-
-        &:first-child::before {
-          content: '1';
-        }
-
-        &:nth-child(2)::before {
-          content: '2';
-        }
-
-        &:nth-child(3)::before {
-          content: '3';
-        }
-
-        &.is_active {
-          color: #23262f;
-          border-bottom: 2px solid $text-primary-color;
-          &::before {
-            background-color: #23262f;
-          }
-        }
       }
     }
   }
+
   &_area {
     display: flex;
     gap: 64px;
@@ -146,6 +175,7 @@
       .cart_item {
         position: relative;
         margin-top: 0;
+        padding-bottom: 22px;
         border-bottom: none;
 
         .btn_quantity {
@@ -163,9 +193,8 @@
         .btn_remove {
           display: inline-flex;
           gap: 4px;
-          top: 81px;
-          right: auto;
-          left: 88px;
+          position: static;
+          margin-left: -8px;
           font-weight: 600;
           font-size: 14px;
           color: $text-secondary-color;
@@ -176,6 +205,10 @@
             content: 'Remove';
           }
         }
+      }
+
+      .cart_info {
+        padding-bottom: 0;
       }
     }
 
@@ -412,6 +445,7 @@
           }
 
           .btn_remove {
+            position: absolute;
             gap: 0;
             top: 46px;
             right: 9px;
@@ -452,8 +486,8 @@
           font-size: 14px;
           line-height: 22px;
 
-          &:first-of-type{
-            .price{
+          &:first-of-type {
+            .price {
               padding-bottom: 4px;
             }
           }
@@ -476,7 +510,7 @@
           }
         }
 
-        .btn_checkout{
+        .btn_checkout {
           margin-top: 24px;
         }
       }

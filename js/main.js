@@ -663,3 +663,12 @@ $(function () {
     });
   });
 });
+
+// Cart summary list
+$('.cart_summary_list').on('click', '.cart_summary_item', function() {
+  const $item = $(this);
+  // Get parent .cart_summary_list containing this item
+  const $list = $item.closest('.cart_summary_list');
+  $list.find('.cart_summary_item').removeClass('is_active');
+  $item.addClass('is_active');
+});

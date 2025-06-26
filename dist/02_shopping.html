@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>3legant. : Home Page 01</title>
+    <title>3legant. : Checkout</title>
     <link rel="stylesheet" type="text/css" href="./css/library/swiper.min.css" />
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
   </head>
@@ -113,176 +113,67 @@
 
       <main class="main">
         <div class="inner">
-          <a href="./01_shop_page.html" class="btn_back">
-            <span class="icon icon_arrow_back"></span>
-            back</a
-          >
+          <a href="./01_shop_page.html" class="btn_back"> <span class="icon icon_arrow_back"></span>back</a>
           <div class="shopping_top">
-            <h2 class="title">Cart</h2>
+            <h2 class="title">Check Out</h2>
             <ol class="process_list">
-              <li class="process_item is_active">Shopping cart</li>
-              <li class="process_item">Checkout details</li>
-              <li class="process_item">Order complete</li>
+              <li class="process_item is_completed"><a href="./01_shopping.html" class="process_link">Shopping cart</a></li>
+              <li class="process_item is_active"><a href="#none" class="process_link">Checkout details</a></li>
+              <li class="process_item"><a href="./" class="process_link">Order complete</a></li>
             </ol>
           </div>
           <div class="shopping_area">
             <div class="shopping_box">
-              <table class="table table_cart">
-                <caption class="blind">
-                  Order Cart
-                </caption>
-                <colgroup>
-                  <col />
-                  <col />
-                  <col />
-                  <col />
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th scope="col">Product</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Subtotal</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="cart_item">
-                        <figure class="cart_img_wrap">
-                          <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" />
-                        </figure>
-                        <div class="cart_info">
-                          <div class="row">
-                            <span class="cart_text">Tray Table</span>
-                            <span class="cart_text">$19.19</span>
-                          </div>
-                          <p class="cart_color">Color: Black</p>
-                          <div class="btn_quantity">
-                            <button type="button" class="btn_minus" aria-label="Minus">
-                              <span class="icon icon_minus"></span>
-                            </button>
-                            <span class="quantity">2</span>
-                            <button type="button" class="btn_plus" aria-label="Plus">
-                              <span class="icon icon_plus"></span>
-                            </button>
-                          </div>
-                          <button type="button" class="btn_remove" aria-label="Delete cart">
-                          <span class="icon icon_close"></span>
-                        </button>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="btn_quantity">
-                        <button type="button" class="btn_minus" aria-label="Minus">
-                          <span class="icon icon_minus"></span>
-                        </button>
-                        <span class="quantity">2</span>
-                        <button type="button" class="btn_plus" aria-label="Plus">
-                          <span class="icon icon_plus"></span>
-                        </button>
-                      </div>
-                    </td>
-                    <td>$19.00</td>
-                    <td>$38.00</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="cart_item">
-                        
-                        <figure class="cart_img_wrap">
-                          <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" />
-                        </figure>
-                        <div class="cart_info">
-                          <div class="row">
-                            <span class="cart_text">Tray Table</span>
-                            <span class="cart_text">$19.19</span>
-                          </div>
-                          <p class="cart_color">Color: Red</p>
-                          <div class="btn_quantity">
-                            <button type="button" class="btn_minus" aria-label="Minus">
-                              <span class="icon icon_minus"></span>
-                            </button>
-                            <span class="quantity">2</span>
-                            <button type="button" class="btn_plus" aria-label="Plus">
-                              <span class="icon icon_plus"></span>
-                            </button>
-                          </div>
-                          <button type="button" class="btn_remove" aria-label="Delete cart">
-                          <span class="icon icon_close"></span>
-                        </button>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="btn_quantity">
-                        <button type="button" class="btn_minus" aria-label="Minus">
-                          <span class="icon icon_minus"></span>
-                        </button>
-                        <span class="quantity">2</span>
-                        <button type="button" class="btn_plus" aria-label="Plus">
-                          <span class="icon icon_plus"></span>
-                        </button>
-                      </div>
-                    </td>
-                    <td>$19.00</td>
-                    <td>$38.00</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="cart_item">
-                        
-                        <figure class="cart_img_wrap">
-                          <img src="../images/product_card/img_product2.png" alt="Table lamp" class="cart_img" />
-                        </figure>
-                        <div class="cart_info">
-                          <div class="row">
-                            <span class="cart_text">Table lamp</span>
-                            <span class="cart_text">$19.19</span>
-                          </div>
-                          <p class="cart_color">Color: Gold</p>
-                          <div class="btn_quantity">
-                            <button type="button" class="btn_minus" aria-label="Minus">
-                              <span class="icon icon_minus"></span>
-                            </button>
-                            <span class="quantity">1</span>
-                            <button type="button" class="btn_plus" aria-label="Plus">
-                              <span class="icon icon_plus"></span>
-                            </button>
-                          </div>
-                          <button type="button" class="btn_remove" aria-label="Delete cart">
-                          <span class="icon icon_close"></span>
-                        </button>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="btn_quantity">
-                        <button type="button" class="btn_minus" aria-label="Minus">
-                          <span class="icon icon_minus"></span>
-                        </button>
-                        <span class="quantity">1</span>
-                        <button type="button" class="btn_plus" aria-label="Plus">
-                          <span class="icon icon_plus"></span>
-                        </button>
-                      </div>
-                    </td>
-                    <td>$39.00</td>
-                    <td>$39.00</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div class="coupon">
-                <h4 class="title">Have a coupon?</h4>
-                <p class="desc">Add your code for an instant cart discount</p>
-                <form action="#none" class="form">
-                  <span class="icon icon_ticket_percent"></span>
-                  <input type="text" name="input_coupon" placeholder="Coupon Code" class="input" />
-                  <button type="submit" class="btn_apply">Apply</button>
-                </form>
-              </div>
+              <form action="#none" class="form">
+                <div class="form_box">
+                  <h4 class="title">Contact Information</h4>
+                  <div class="form_row">
+                    <div class="form_group">
+                      <label for="first_name" class="form_label">First name</label>
+                      <input type="text" id="first_name" name="first_name" placeholder="First name" class="form_input" />
+                    </div>
+                    <div class="form_group">
+                      <label for="last_name" class="form_label">Last name</label>
+                      <input type="text" id="last_name" name="last_name" placeholder="Last name" class="form_input" />
+                    </div>
+                  </div>
+                  <label for="phone_number" class="form_label">Phone Number</label>
+                  <input type="tel" id="phone_number" name="phone_number" placeholder="Phone number" class="form_input" />
+                  <label for="email_address" class="form_label">Email address</label>
+                  <input type="email" id="email_address" name="email_address" placeholder="Your Email" class="form_input" />
+                </div>
+                <div class="form_box">
+                  <h4 class="title">Shipping Address</h4>
+                  <label for="street_address" class="form_label">Street Address *</label>
+                  <input type="text" id="street_address" name="street_address" placeholder="Street Address" class="form_input" />
+                  <label for="country" class="form_label">Country *</label>
+                  <div class="form_input_wrap">
+                    <input type="text" id="country" name="country" placeholder="Country" class="form_input" />
+                    <span class="icon icon_arrow_down">
+                      <span class="blind">Arrow down</span>
+                    </span>
+                  </div>
+                  <label for="city" class="form_label">Town / City *</label>
+                  <input type="text" id="city" name="city" placeholder="Town / City" class="form_input" />
+                  <div class="form_row">
+                    <div class="form_group">
+                      <label for="state" class="form_label">State</label>
+                      <input type="text" id="state" name="state" placeholder="State" class="form_input" />
+                    </div>
+                    <div class="form_group">
+                      <label for="zip_code" class="form_label">Zip Code</label>
+                      <input type="text" id="zip_code" name="zip_code" placeholder="Zip Code" class="form_input" />
+                    </div>
+                  </div>
+                  <div class="form_checkbox">
+                    <input type="checkbox" id="checkbox" class="input_checkbox" hidden />
+                    <label for="checkbox" class="form_label">Use a different billing address (optional)</label>
+                  </div>
+                </div>
+                <div class="form_box">
+                  <h4 class="title"></h4>
+                </div>
+              </form>
             </div>
             <div class="cart_summary">
               <h4 class="title">Cart summary</h4>
