@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <title>3legant. : Checkout</title>
-    <link rel="stylesheet" type="text/css" href="./css/library/swiper.min.css" />
-    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./css/library/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
   </head>
   <body>
     <div class="shopping_wrap">
@@ -19,7 +19,7 @@
             <ol class="process_list">
               <li class="process_item is_completed"><a href="./01_shopping.html" class="process_link">Shopping cart</a></li>
               <li class="process_item is_active"><a href="#none" class="process_link">Checkout details</a></li>
-              <li class="process_item"><a href="./" class="process_link">Order complete</a></li>
+              <li class="process_item"><a href="./03_shopping.html" class="process_link">Order complete</a></li>
             </ol>
           </div>
           <div class="shopping_area">
@@ -30,76 +30,202 @@
                   <div class="form_row">
                     <div class="form_group">
                       <label for="first_name" class="form_label">First name</label>
-                      <input type="text" id="first_name" name="first_name" placeholder="First name" class="form_input" />
+                      <input type="text" id="first_name" name="first_name" placeholder="First name" class="form_input">
                     </div>
                     <div class="form_group">
                       <label for="last_name" class="form_label">Last name</label>
-                      <input type="text" id="last_name" name="last_name" placeholder="Last name" class="form_input" />
+                      <input type="text" id="last_name" name="last_name" placeholder="Last name" class="form_input">
                     </div>
                   </div>
-                  <label for="phone_number" class="form_label">Phone Number</label>
-                  <input type="tel" id="phone_number" name="phone_number" placeholder="Phone number" class="form_input" />
-                  <label for="email_address" class="form_label">Email address</label>
-                  <input type="email" id="email_address" name="email_address" placeholder="Your Email" class="form_input" />
+                  <div class="form_group">
+                    <label for="phone_number" class="form_label">Phone Number</label>
+                    <input type="tel" id="phone_number" name="phone_number" placeholder="Phone number" class="form_input">
+                  </div>
+                  <div class="form_group">
+                    <label for="email" class="form_label">Email address</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" class="form_input">
+                  </div>
                 </div>
                 <div class="form_box">
                   <h4 class="title">Shipping Address</h4>
-                  <label for="street_address" class="form_label">Street Address *</label>
-                  <input type="text" id="street_address" name="street_address" placeholder="Street Address" class="form_input" />
-                  <label for="country" class="form_label">Country *</label>
-                  <div class="form_input_wrap">
-                    <input type="text" id="country" name="country" placeholder="Country" class="form_input" />
-                    <span class="icon icon_arrow_down">
-                      <span class="blind">Arrow down</span>
-                    </span>
+                  <div class="form_group">
+                    <label for="street" class="form_label">Street Address<span class="rosette">*</span></label>
+                    <input type="text" id="street" name="street" placeholder="Street Address" class="form_input">
                   </div>
-                  <label for="city" class="form_label">Town / City *</label>
-                  <input type="text" id="city" name="city" placeholder="Town / City" class="form_input" />
+                  <div class="select">
+                    <h3 class="select_label">Country<span class="rosette">*</span></h3>
+                    <button type="button" aria-label="Select" class="btn_option">Country</button>
+                    <div class="select_option">
+                      <ul class="select_list">
+                        <li class="select_item is_active">
+                          <a href="#none" class="select_link">Country</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">Việt Nam</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">America</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">Russia</a>
+                        </li>
+                        <li class="select_item">
+                          <a href="#none" class="select_link">Germany</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="form_group">
+                    <label for="city" class="form_label">Town City<span class="rosette">*</span></label>
+                    <input type="text" id="city" name="city" placeholder="Town City" class="form_input">
+                  </div>
                   <div class="form_row">
                     <div class="form_group">
                       <label for="state" class="form_label">State</label>
-                      <input type="text" id="state" name="state" placeholder="State" class="form_input" />
+                      <input type="text" id="state" name="state" placeholder="State" class="form_input">
                     </div>
                     <div class="form_group">
                       <label for="zip_code" class="form_label">Zip Code</label>
-                      <input type="text" id="zip_code" name="zip_code" placeholder="Zip Code" class="form_input" />
+                      <input type="text" id="zip_code" name="zip_code" placeholder="Zip Code" class="form_input">
                     </div>
                   </div>
-                  <div class="form_checkbox">
-                    <input type="checkbox" id="checkbox" class="input_checkbox" hidden />
+                  <div class="form_group">
+                    <input type="checkbox" id="checkbox" class="form_input_checkbox" hidden>
                     <label for="checkbox" class="form_label">Use a different billing address (optional)</label>
                   </div>
                 </div>
                 <div class="form_box">
-                  <h4 class="title"></h4>
+                  <h4 class="title">Payment method</h4>
+                  <ul class="cart_summary_list">
+                    <li class="cart_summary_item is_active">
+                      Pay by Card Credit
+                      <span class="icon icon_money">
+                        <span class="blind">Icon money</span>
+                      </span>
+                    </li>
+                    <li class="cart_summary_item">Paypal</li>
+                  </ul>
+                  <div class="form_group">
+                    <label for="card_number" class="form_label">Card Number</label>
+                    <input type="text" id="card_number" name="card_number" placeholder="1234 1234 1234" class="form_input">
+                  </div>
+                  <div class="form_row">
+                    <div class="form_group">
+                      <label for="date" class="form_label">Expiration date</label>
+                      <input type="text" id="date" name="date" placeholder="MM/YY" class="form_input">
+                    </div>
+                    <div class="form_group">
+                      <label for="cvc" class="form_label">CVC</label>
+                      <input type="number" id="cvc" name="cvc" placeholder="CVC code" class="form_input">
+                    </div>
+                  </div>
                 </div>
+                <a href="./03_shopping.html" class="btn btn_submit">Place Order</a>
               </form>
             </div>
-            <div class="cart_summary">
-              <h4 class="title">Cart summary</h4>
-              <ul class="cart_summary_list">
-                <li class="cart_summary_item is_active">
-                  Free shipping
-                  <span class="price">$0.00</span>
+            <div class="checkout_wrap">
+              <h4 class="title">Order summary</h4>
+              <ul class="cart_list">
+                <li class="cart_item">
+                  <button type="button" class="btn_remove" aria-label="Delete cart">
+                    <span class="icon icon_close"></span>
+                  </button>
+                  <figure class="cart_img_wrap">
+                    <img src="../images/img_product7.png" alt="Tray Table" class="cart_img">
+                  </figure>
+                  <div class="cart_info">
+                    <div class="row">
+                      <span class="cart_text">Tray Table</span>
+                      <span class="cart_text">$38.00</span>
+                    </div>
+                    <p class="cart_color">Color: Black</p>
+                    <div class="btn_quantity">
+                      <button type="button" class="btn_minus" aria-label="Minus">
+                        <span class="icon icon_minus"></span>
+                      </button>
+                      <span class="quantity">2</span>
+                      <button type="button" class="btn_plus" aria-label="Plus">
+                        <span class="icon icon_plus"></span>
+                      </button>
+                    </div>
+                  </div>
                 </li>
-                <li class="cart_summary_item">
-                  Express shipping
-                  <span class="price">+$15.00</span>
+                <li class="cart_item">
+                  <button type="button" class="btn_remove" aria-label="Delete cart">
+                    <span class="icon icon_close"></span>
+                  </button>
+                  <figure class="cart_img_wrap">
+                    <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" style="filter: hue-rotate(0deg)">
+                  </figure>
+                  <div class="cart_info">
+                    <div class="row">
+                      <span class="cart_text">Tray Table</span>
+                      <span class="cart_text">$38.00</span>
+                    </div>
+                    <p class="cart_color">Color: Red</p>
+                    <div class="btn_quantity">
+                      <button type="button" class="btn_minus" aria-label="Minus">
+                        <span class="icon icon_minus"></span>
+                      </button>
+                      <span class="quantity">2</span>
+                      <button type="button" class="btn_plus" aria-label="Plus">
+                        <span class="icon icon_plus"></span>
+                      </button>
+                    </div>
+                  </div>
                 </li>
-                <li class="cart_summary_item">
-                  Pick Up
-                  <span class="price">%21.00</span>
+                <li class="cart_item">
+                  <button type="button" class="btn_remove" aria-label="Delete cart">
+                    <span class="icon icon_close"></span>
+                  </button>
+                  <figure class="cart_img_wrap">
+                    <img src="../images/product_card/img_product2.png" alt="Table lamp" class="cart_img">
+                  </figure>
+                  <div class="cart_info">
+                    <div class="row">
+                      <span class="cart_text">Table Lamp</span>
+                      <span class="cart_text">$39.00</span>
+                    </div>
+                    <p class="cart_color">Color: Gold</p>
+                    <div class="btn_quantity">
+                      <button type="button" class="btn_minus" aria-label="Minus">
+                        <span class="icon icon_minus"></span>
+                      </button>
+                      <span class="quantity">2</span>
+                      <button type="button" class="btn_plus" aria-label="Plus">
+                        <span class="icon icon_plus"></span>
+                      </button>
+                    </div>
+                  </div>
                 </li>
               </ul>
-              <div class="row">
-                <span class="label">Subtotal</span>
-                <span class="price">$1234.00</span>
+              <form action="#none" class="form">
+                <input type="text" name="discount_code" placeholder="Input" class="form_input">
+                <button type="submit" class="btn btn_submit">Apply</button>
+              </form>
+              <div class="order_summary">
+                <div class="row">
+                  <span class="title">
+                    <span class="icon icon_ticket_percent">
+                      <span class="blind">Ticket percent</span>
+                    </span>
+                    JenkateMW
+                  </span>
+                  <div class="discount">-$25.00 <button type="button" class="btn_remove">[Remove]</button></div> 
+                </div>
+                <div class="row">
+                  <span class="title">Shipping</span>
+                  <span class="price">Free</span>
+                </div>
+                <div class="row">
+                  <span class="title">Subtotal</span>
+                  <span class="price">$99.00</span>
+                </div>
+                <div class="row">
+                  <span class="title">Total</span>
+                  <span class="price">$234.00</span>
+                </div>
               </div>
-              <div class="row">
-                <span class="label">Total</span>
-                <span class="price">$1345.00</span>
-              </div>
-              <a href="#none" class="btn btn_checkout">Checkout</a>
             </div>
           </div>
         </div>
@@ -122,7 +248,7 @@
               <span class="icon icon_close"></span>
             </button>
             <figure class="cart_img_wrap">
-              <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" />
+              <img src="../images/img_product7.png" alt="Tray Table" class="cart_img">
             </figure>
             <div class="cart_info">
               <div class="row">
@@ -146,7 +272,7 @@
               <span class="icon icon_close"></span>
             </button>
             <figure class="cart_img_wrap">
-              <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" style="filter: hue-rotate(0deg)" />
+              <img src="../images/img_product7.png" alt="Tray Table" class="cart_img" style="filter: hue-rotate(0deg)">
             </figure>
             <div class="cart_info">
               <div class="row">
@@ -170,11 +296,11 @@
               <span class="icon icon_close"></span>
             </button>
             <figure class="cart_img_wrap">
-              <img src="../images/product_card/img_product2.png" alt="Table lamp" class="cart_img" />
+              <img src="../images/product_card/img_product2.png" alt="Table lamp" class="cart_img">
             </figure>
             <div class="cart_info">
               <div class="row">
-                <span class="cart_text">Table lamp</span>
+                <span class="cart_text">Table Lamp</span>
                 <span class="cart_text">$39.00</span>
               </div>
               <p class="cart_color">Color: Gold</p>
@@ -201,7 +327,7 @@
           </div>
           <a href="./shopping.html" class="btn btn_checkout">Checkout</a>
         </div>
-        <a href="#none" class="popup_link">View Cart</a>
+        <a href="./01_shopping.html" class="popup_link">View Cart</a>
       </div>
     </div>
     <!-- popup -->

@@ -259,7 +259,15 @@
     }
     .btn_minus,
     .btn_plus {
-      padding: 4px;
+      padding: 8px;
+    }
+
+    .btn_minus{
+      left: 8px;
+    }
+
+    .btn_plus{
+      right: 8px;
     }
   }
 

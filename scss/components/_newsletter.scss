@@ -34,8 +34,10 @@
       align-items: center;
       gap: 8px;
       position: relative;
+      height: initial;
       margin-bottom: 6px;
       padding: 6px 0;
+      border: none;
 
       &::after {
         position: absolute;

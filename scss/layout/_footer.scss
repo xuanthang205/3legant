@@ -150,11 +150,11 @@
 
       &_item {
         margin-top: 24px;
+        text-align: center;
       }
 
       &_link {
-        display: block;
-        text-align: center;
+        display: inline-block;
       }
     }
   }
