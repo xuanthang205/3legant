@@ -1952,7 +1952,7 @@ a {
     line-height: 24px;
     box-sizing: border-box;
   }
-  .header.is_show .action_link::after,
+  .header.is_show .action_item::after,
   .header.is_show .nav_item::after {
     position: absolute;
     left: 0;
@@ -1962,7 +1962,7 @@ a {
     pointer-events: none;
     content: "";
   }
-  .header.is_show .action_link::after {
+  .header.is_show .action_item::after {
     bottom: -8px;
   }
   .header.is_show .action_list {
@@ -1970,6 +1970,7 @@ a {
     margin: auto 0 0;
   }
   .header.is_show .action_item {
+    position: relative;
     width: 100%;
     margin-left: 0;
   }
@@ -1977,7 +1978,6 @@ a {
     display: flex;
   }
   .header.is_show .action_link {
-    position: relative;
     width: 100%;
     padding: 0;
   }
@@ -3627,7 +3627,6 @@ a {
 .shopping_wrap .process_link {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
   gap: 17px;
   width: 256px;
   padding-bottom: 24px;
@@ -3655,7 +3654,7 @@ a {
 .shopping_area {
   display: flex;
   gap: 64px;
-  padding: 80px 0;
+  padding-top: 80px;
 }
 .shopping_area .table_cart {
   width: 100%;
@@ -4005,12 +4004,12 @@ a {
 .shopping_box .btn_submit {
   --height: 52px;
   display: flex;
-  margin-top: 24px;
+  margin: 24px 0 80px;
 }
 .shopping_complete {
   width: min(738px, 100%);
-  margin: 0 auto;
-  padding: 80px 96px;
+  margin: 80px auto 0;
+  padding: 80px 0;
   box-shadow: 0px 32px 48px rgba(18, 18, 18, 0.1);
   text-align: center;
   box-sizing: border-box;
@@ -4024,7 +4023,8 @@ a {
   line-height: 34px;
 }
 .shopping_complete .heading {
-  margin-top: 16px;
+  max-width: 546px;
+  margin: 16px auto 0;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 40px;
@@ -4065,7 +4065,6 @@ a {
   grid-template-columns: 1fr 1fr;
   column-gap: 32px;
   margin-top: 20px;
-  padding: 0 137px;
 }
 .shopping_complete .order_detail_text {
   margin-top: 20px;
@@ -4075,6 +4074,8 @@ a {
   text-align: left;
 }
 .shopping_complete .order_detail_text:nth-child(odd) {
+  width: 120px;
+  margin-left: auto;
   color: #6d7275;
 }
 .shopping_complete .order_detail_text:nth-child(even) {
@@ -4107,7 +4108,7 @@ a {
     flex-direction: column;
     position: relative;
     gap: 24px;
-    padding: 40px 0 76px;
+    padding-top: 40px;
   }
   .shopping_area .title {
     font-family: "Inter", sans-serif;
@@ -4228,13 +4229,14 @@ a {
   }
   .shopping_area .form_box + .btn_submit {
     position: absolute;
-    bottom: 0;
+    bottom: -80px;
     left: 0;
     width: 100%;
   }
   .shopping_area .checkout_wrap {
     align-self: initial;
     padding: 15px;
+    margin-bottom: 76px;
   }
   .shopping_area .checkout_wrap .title {
     font-size: 20px;
@@ -4260,5 +4262,61 @@ a {
   .shopping_box,
   .shopping .cart_summary {
     width: 100%;
+  }
+  .shopping_complete {
+    margin-top: 40px;
+    padding: 16px;
+  }
+  .shopping_complete .title {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0;
+    text-align: left;
+  }
+  .shopping_complete .heading {
+    max-width: 180px;
+    margin: 16px 0 0;
+    font-size: 34px;
+    line-height: 38px;
+    letter-spacing: -0.6px;
+    text-align: left;
+  }
+  .shopping_complete .cart_list {
+    gap: 8px;
+  }
+  .shopping_complete .cart_item {
+    padding: 8px 8px 0 0;
+  }
+  .shopping_complete .cart_item .quantity {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    line-height: 10px;
+  }
+  .shopping_complete .order_detail {
+    grid-template-columns: 1fr;
+    margin-top: 8px;
+  }
+  .shopping_complete .order_detail_text:nth-child(odd) {
+    width: initial;
+    margin: 32px 0 0;
+  }
+  .shopping_complete .order_detail_text:nth-child(even) {
+    position: relative;
+    margin-top: 8px;
+  }
+  .shopping_complete .order_detail_text:nth-child(even)::after {
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e8ecef;
+    content: "";
+  }
+  .shopping_complete .btn_more {
+    width: min(311px, 100%);
+    margin-top: 56px;
   }
 }
