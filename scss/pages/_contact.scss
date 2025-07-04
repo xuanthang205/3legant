@@ -1,0 +1,290 @@
+@use '../common/variables' as *;
+@use '../common/mixins';
+.contact {
+  &_wrap {
+    .breadcrumbs {
+      border-top: none;
+      .inner {
+        padding: 16px 0 0;
+      }
+    }
+
+    .inner {
+      padding-top: 40px;
+    }
+
+    .hero {
+      margin-top: 48px;
+
+      &_box {
+        padding-right: 35px;
+      }
+
+      &_desc {
+        font-size: 16px;
+        color: #121212;
+        line-height: 26px;
+      }
+
+      .section_heading {
+        margin-top: 0;
+        color: #121212;
+      }
+
+      .more_link {
+        color: #121212;
+      }
+    }
+
+    .info {
+      &_list {
+        display: flex;
+        gap: 16px 24px;
+        margin-top: 40px;
+
+        .icon {
+          width: 48px;
+          height: 48px;
+          background-image: url(../../images/sp_icons_medium.png);
+          background-size: 245px 98px;
+
+          &_telephone {
+            width: 32px;
+            height: 32px;
+            background-position: -98px -1px;
+            background-size: 164px 66px;
+          }
+        }
+
+        .title {
+          margin-top: 16px;
+          font-weight: 700;
+          font-size: 16px;
+          color: $text-secondary-color;
+          line-height: 16px;
+          text-transform: uppercase;
+        }
+      }
+
+      &_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc((100% - 48px) / 3);
+        padding: 16px 0;
+        background-color: #f3f5f7;
+
+        &:not(:nth-child(2)) {
+          .icon {
+            margin-top: -8px;
+          }
+
+          .title {
+            margin-top: 8px;
+          }
+        }
+      }
+
+      &_link {
+        max-width: 293px;
+        margin-top: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        color: $text-primary-color;
+        line-height: 26px;
+        text-align: center;
+      }
+    }
+  }
+
+  &_header {
+    max-width: 834px;
+    .heading {
+      font-family: $poppins;
+      font-weight: 500;
+      font-size: 54px;
+      color: $text-primary-color;
+      letter-spacing: -1.3px;
+      line-height: 58px;
+    }
+
+    .desc {
+      margin-top: 24px;
+      font-size: 16px;
+      font-weight: 400;
+      color: $text-primary-color;
+      line-height: 26px;
+    }
+  }
+
+  &_us {
+    margin-top: 48px;
+
+    .section_heading {
+      color: #121212;
+      text-align: center;
+    }
+
+    .row {
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .form {
+      flex-grow: 1;
+
+      &_group:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .btn_submit {
+      --height: 40px;
+      width: min(189px, 100%);
+      margin-top: 24px;
+    }
+
+    .map {
+      position: relative;
+      width: 48.929%;
+      padding-top: 36.072%;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &_benefit {
+    background-color: #f3f5f7;
+    .inner {
+      padding: 16px 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    &_wrap {
+      .breadcrumbs {
+        &_list {
+          gap: 8px;
+        }
+
+        &_item:not(.is_active)::after {
+          top: 0px;
+        }
+
+        &_link {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+
+      .inner {
+        padding-top: 48px;
+      }
+
+      .hero {
+        margin-top: 40px;
+
+        &_media {
+          padding-top: 100%;
+        }
+
+        .section_heading {
+          font-size: 20px;
+          line-height: 28px;
+          letter-spacing: 0;
+        }
+
+        &_box {
+          height: 311px;
+          padding: 0 16px;
+        }
+
+        &_desc {
+          font-size: 14px;
+          line-height: 22px;
+        }
+
+        .more_link {
+          font-size: 16px;
+          line-height: 28px;
+          letter-spacing: -0.4px;
+
+          .icon {
+            margin-left: 3px;
+          }
+        }
+      }
+
+      .info {
+        &_list {
+          flex-direction: column;
+        }
+
+        &_item {
+          width: 100%;
+          min-height: 156px;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+    &_header {
+      .heading {
+        font-size: 28px;
+        line-height: 34px;
+        letter-spacing: -0.8px;
+      }
+    }
+
+    &_us {
+      margin-top: 0;
+      .section_heading {
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 0px;
+      }
+
+      .row {
+        flex-direction: column-reverse;
+        gap: 24px;
+
+        .form{
+            width: 100%;
+        }
+      }
+
+      .map{
+        width: 100%;
+        padding-top: 100%;
+      }
+
+      .form_group{
+        margin-top: 16px;
+      }
+
+      .form_input::placeholder{
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      .btn_submit{
+        display: flex;
+        margin: 16px auto 0;
+      }
+    }
+
+    &_benefit{
+        .inner{
+            padding: 32px 0;
+        }
+    }
+  }
+}

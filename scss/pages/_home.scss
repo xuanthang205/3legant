@@ -164,65 +164,6 @@
     margin-top: auto;
   }
 }
-
-.benefit {
-  .inner {
-    padding: 48px 0;
-  }
-
-  &_wrap {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 24px;
-  }
-
-  &_card {
-    width: calc((100% - 72px) / 4);
-    padding: 48px 32px;
-    background-color: #f3f5f7;
-    box-sizing: border-box;
-
-    .icon {
-      width: 48px;
-      height: 48px;
-      background-image: url(../../images/sp_icons_medium.png);
-      background-size: 246px 50px;
-      background-position: -1px -1px;
-
-      &_refund {
-        background-position: -50px -1px;
-      }
-
-      &_lock {
-        background-position: -99px -1px;
-      }
-
-      &_telephone {
-        background-position: -148px -1px;
-      }
-    }
-  }
-
-  &_box {
-    margin-top: 16px;
-  }
-
-  &_title {
-    font-family: $poppins;
-    font-size: 20px;
-    font-weight: 500;
-    color: $text-primary-color;
-    line-height: 28px;
-  }
-
-  &_desc {
-    margin-top: 8px;
-    font-family: $poppins;
-    font-size: 14px;
-    color: $text-secondary-color;
-    line-height: 24px;
-  }
-}
 }
 
 @media (max-width: 992px) {
@@ -246,15 +187,7 @@
     }
   }
 
-  .benefit {
-    &_wrap {
-      gap: 24px;
-    }
-
-    &_card {
-      width: calc((100% - 24px) / 2);
-    }
-  }
+  
 }
 }
 
@@ -322,34 +255,6 @@
       position: absolute;
       bottom: 32px;
       left: 32px;
-    }
-  }
-
-  .benefit {
-    .inner {
-      padding: 32px 0;
-    }
-
-    &_wrap {
-      gap: 24px 9px;
-    }
-
-    &_card {
-      width: calc((100% - 9px) / 2);
-      padding: 32px 16px;
-    }
-
-    &_title {
-      font-family: $inter;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 22px;
-    }
-
-    &_desc {
-      margin-top: 4px;
-      font-family: $inter;
-      line-height: 22px;
     }
   }
 

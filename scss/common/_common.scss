@@ -220,6 +220,14 @@ a {
   &_money {
     background-position: -201px -51px;
   }
+
+  &_location {
+    background-position: -50px -50px;
+  }
+
+  &_email{
+    background-position: 0 -50px;
+  }
 }
 // //Icon
 
@@ -390,7 +398,8 @@ a {
     line-height: 20px;
   }
 
-  .btn_minus, .btn_plus{
+  .btn_minus,
+  .btn_plus {
     top: 50%;
     transform: translateY(-50%);
   }
@@ -705,6 +714,22 @@ a {
         content: '';
       }
     }
+  }
+
+  &_area{
+    display: block;
+    width: 100%;
+    min-height: 140px;
+    margin-top: 12px;
+    padding: 15px;
+    border: 1px solid #cbcbcb;
+    border-radius: 6px;
+    font-size: 16px;
+    color: $text-primary-color;
+    line-height: 26px;
+    outline: none;
+    box-sizing: border-box;
+    resize: none;
   }
 }
 

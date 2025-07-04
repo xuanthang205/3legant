@@ -18,6 +18,7 @@
 @use './components/reactions';
 @use './components/section_header';
 @use './components/btn_layout';
+@use './components/benefit';
 
 // Layout
 @use './layout/header';
@@ -28,3 +29,4 @@
 @use './pages/product';
 @use './pages/shop';
 @use './pages/shopping';
+@use './pages/contact';
