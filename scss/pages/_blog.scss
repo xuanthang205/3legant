@@ -1,0 +1,125 @@
+@use "../common/variables" as *;
+@use "../common/mixins";
+.blog {
+    &_wrap {
+        .main {
+            .inner {
+                padding-top: 0;
+            }
+
+            .btn_outline {
+                --height: 40px;
+                display: flex;
+                min-width: min(163px, 100%);
+                border-radius: 80px;
+                margin: 80px auto 0;
+            }
+        }
+
+        .toolbar {
+            margin-top: 24px;
+            .select {
+                display: none;
+            }
+
+            &_box {
+                display: flex;
+                align-items: center;
+                width: 100%;
+            }
+
+            .btn_sort {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                margin-left: auto;
+                font-family: Inter;
+                font-weight: 600;
+                font-size: 16px;
+                color: #121212;
+                line-height: 26px;
+            }
+
+            .btn_filter {
+                margin-left: 32px;
+                padding: 4px;
+                font-weight: 600;
+                font-size: 14px;
+                color: #807e7e;
+                line-height: 22px;
+                box-sizing: border-box;
+
+                &_wrap {
+                    margin-left: -36px;
+                }
+
+                &.is_active {
+                    position: relative;
+                    color: #121212;
+
+                    &::after {
+                        position: absolute;
+                        bottom: 4px;
+                        left: 4px;
+                        width: calc(100% - 8px);
+                        height: 1px;
+                        background-color: #121212;
+                        content: "";
+                    }
+                }
+            }
+
+            .btn_layout_wrap {
+                margin-left: 32px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .blog {
+        &_wrap {
+            .toolbar {
+                .select {
+                    display: flex;
+                    width: 100%;
+
+                    .btn_option {
+                        border-color: #6d7275;
+                    }
+                }
+
+                .btn_sort {
+                    display: none;
+                }
+
+                .btn_filter {
+                    display: none;
+                }
+
+                .btn_layout_wrap {
+                    display: none;
+                }
+            }
+
+            .blog_list,
+            .toolbar {
+                margin-top: 32px;
+            }
+
+            .blog_list {
+                gap: 16px;
+            }
+
+            .blog_link {
+                margin-top: 25px;
+            }
+
+            .main {
+                .btn_outline {
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+}

@@ -259,15 +259,12 @@
     }
   }
 
-  .btn_more {
+  .btn_outline {
     --height: 40px;
     display: flex;
     min-width: 163px;
     margin: 80px auto 0;
-    border: 1px solid $text-primary-color;
     border-radius: 80px;
-    background-color: #fff;
-    color: $text-primary-color;
   }
 
   &.is_change {

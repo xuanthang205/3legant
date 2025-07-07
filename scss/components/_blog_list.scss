@@ -1,87 +1,89 @@
-@use '../common/variables' as *;
+@use "../common/variables" as *;
 .blog_list {
-  display: flex;
-  margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 25px;
+    margin-top: 40px;
 }
 
 .blog_item {
-  width: calc((100% - 50px) / 3);
+    width: calc((100% - 50px) / 3);
 
-  & + & {
-    margin-left: 25px;
-  }
+    .more_link {
+        align-self: flex-start;
+        margin-top: auto;
+    }
 
-  .more_link {
-    align-self: flex-start;
-    margin-top: auto;
-  }
+    .date {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: $text-secondary-color;
+    }
 }
 
 .blog_box {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 
-  &:hover .blog_img {
-    scale: 1.1;
-  }
+    &:hover .blog_img {
+        scale: 1.1;
+    }
 }
 
 .blog_img_link {
-  display: block;
-  overflow: hidden;
-  position: relative;
-  padding-top: 91.1215%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding-top: 91.1215%;
 }
 
 .blog_img {
-  transition: scale 0.25s ease;
+    transition: scale 0.25s ease;
 }
 
 .blog_title {
-  display: -webkit-box;
-  overflow: hidden;
-  font-family: $poppins;
-  font-size: 20px;
-  font-weight: 500;
-  color: #23262f;
-  text-overflow: ellipsis;
-  line-height: 28px;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    font-family: $poppins;
+    font-size: 20px;
+    font-weight: 500;
+    color: #23262f;
+    text-overflow: ellipsis;
+    line-height: 28px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .blog_link {
-  display: block;
-  margin: 24px 0 8px;
+    display: block;
+    margin: 24px 0 8px;
 }
 
 @media (max-width: 768px) {
-  .blog_list {
-    flex-direction: column;
-  }
-
-  .blog_item {
-    width: 100%;
-
-    & + & {
-      margin: 24px 0 0;
+    .blog_list {
+        flex-direction: column;
+        gap: 24px;
     }
-  }
 
-  .blog_img_link {
-    padding-top: 90.997%;
-  }
+    .blog_item {
+        width: 100%;
+    }
 
-  .blog_link {
-    margin-top: 16px;
-  }
+    .blog_img_link {
+        padding-top: 90.997%;
+    }
 
-  .blog_title {
-    font-family: $inter;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 26px;
-  }
+    .blog_link {
+        margin-top: 16px;
+    }
+
+    .blog_title {
+        font-family: $inter;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 26px;
+    }
 }

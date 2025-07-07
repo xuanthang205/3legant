@@ -111,6 +111,40 @@ a {
   &:hover {
     opacity: 0.8;
   }
+
+  &_outline{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    border: 1px solid $text-primary-color;
+    color: $text-primary-color;
+    background-color: transparent;
+    transition: all 0.25s ease;
+
+    &::before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      width: 0;
+      margin: 0 auto;
+      height: 100%;
+      background-color: $green-color;
+      transition: width 0.25s ease;
+      content: ''
+    }
+
+    &:hover{
+      border-color: $green-color;
+      color: #fff;
+      opacity: 1;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
 }
 
 .row {

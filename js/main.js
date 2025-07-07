@@ -541,7 +541,7 @@ $(document).ready(function () {
 // Load comment
 $(document).ready(function () {
   const $comments = $('.comments .comment_box');
-  const $btnMore = $('.comments + .btn_more');
+  const $btnMore = $('.comments + .btn_outline');
   const maxToShow = 5;
   let isExpanded = false;
 

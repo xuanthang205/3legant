@@ -63,7 +63,7 @@
     position: relative;
     padding-bottom: 24px;
 
-    &::after{
+    &::after {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -203,45 +203,13 @@
       gap: 24px;
     }
 
-    .btn_favorite {
+    .btn_outline {
       --height: 52px;
-      display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       flex-grow: 1;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid $text-primary-color;
-      background-color: transparent;
       font-size: 18px;
-      color: $text-primary-color;
-      line-height: 32px;
-      transition: border-color 0.3s ease;
-
-      &::before {
-        position: absolute;
-        z-index: -1;
-        width: 0;
-        right: 0;
-        left: initial;
-        height: 100%;
-        background-color: $green-color;
-        transition: width 0.3s ease;
-        content: '';
-      }
-
-      &:hover {
-        border-color: $green-color;
-        color: #fff;
-        opacity: 1;
-      }
-
-      &:hover::before {
-        left: 0;
-        right: initial;
-        width: 100%;
-      }
     }
   }
 
@@ -262,11 +230,11 @@
       padding: 8px;
     }
 
-    .btn_minus{
+    .btn_minus {
       left: 8px;
     }
 
-    .btn_plus{
+    .btn_plus {
       right: 8px;
     }
   }
@@ -304,6 +272,16 @@
 
   .tabs {
     padding: 40px 0;
+
+    .btn_outline {
+      --height: 40px;
+      display: flex;
+      justify-content: center;
+      min-width: 158px;
+      margin: 24px auto 0;
+      border-radius: 80px;
+      font-size: 16px;
+    }
   }
 
   .tab_content {
@@ -531,19 +509,6 @@
     font-size: 12px;
     line-height: 20px;
   }
-
-  .btn_more {
-    --height: 40px;
-    display: flex;
-    justify-content: center;
-    min-width: 158px;
-    margin: 24px auto 0;
-    border: 1px solid $text-primary-color;
-    border-radius: 80px;
-    background-color: #fff;
-    font-size: 16px;
-    color: $text-primary-color;
-  }
 }
 
 @media (max-width: 992px) {
@@ -647,7 +612,7 @@
       .row {
         gap: 8px;
       }
-      .btn_favorite {
+      .btn_outline {
         --height: 32px;
         border-radius: 4px;
         font-size: 14px;
@@ -717,7 +682,7 @@
               background-position: -126px -51px;
             }
 
-            &::after{
+            &::after {
               background-color: $text-primary-color;
             }
           }
